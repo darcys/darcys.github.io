@@ -5,7 +5,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com//"/>
-  <updated>2015-07-15T05:33:15.000Z</updated>
+  <updated>2015-09-05T03:07:38.000Z</updated>
   <id>http://yoursite.com//</id>
   
   <author>
@@ -14,6 +14,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[reading-notes-ansible-up-and-running]]></title>
+    <link href="http://yoursite.com/2015/09/05/reading-notes-ansible-up-and-running/index.html"/>
+    <id>http://yoursite.com/2015/09/05/reading-notes-ansible-up-and-running/index.html</id>
+    <published>2015-09-05T02:53:04.000Z</published>
+    <updated>2015-09-05T03:07:38.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="简介">简介</h2><p>大而全的入门书籍，</p>
+<h3 id="笔记">笔记</h3><h4 id="ansible的来历">ansible的来历</h4><p>最早来源于一部科幻小说，是一种超光速长距离的通讯设备，后来这个名字在《安德的游戏》中被借用，就是用来操作千军万马对抗外星生物的控制设备，这么看来这个名字还是很贴切的。</p>
+<h4 id="第一章">第一章</h4><ul>
+<li>YAML is to JSON what Markdown is to HTML.</li>
+<li>Ansible是push的，puppet是pull的。不过ansible也支持pull模式的，用ansible-pull，我在14年底前差不多用了2年多的puppet，我都没觉得pull模式有什么好，反而最后都做成了masterless的puppet用法。</li>
+<li>金句， Alan Kay’s maxim: “Simple things should be simple, complex things should be possible.”</li>
+<li></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="简介">简介</h2><p>大而全的入门书籍，</p>
+<h3 id="笔记">笔记</h3><h4 id="ansible的来历">ansible的来历</h4><p>最早来源于一部科幻小说，是一种超光速长距离的通讯设备，后来这个名字在《安德的游戏》中被借用，就]]>
+    </summary>
+    
+      <category term="ansible" scheme="http://yoursite.com/tags/ansible/"/>
+    
+      <category term="reading-notes" scheme="http://yoursite.com/tags/reading-notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[阅读笔记- 《Ansible Playbook Essentials》]]></title>
+    <link href="http://yoursite.com/2015/09/04/readbook-ansible-playbook-essentials/index.html"/>
+    <id>http://yoursite.com/2015/09/04/readbook-ansible-playbook-essentials/index.html</id>
+    <published>2015-09-04T06:16:28.000Z</published>
+    <updated>2015-09-04T16:39:42.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="简介">简介</h3><p>个人觉得在阅读这本书前，最好读一些基础的ansible书籍，看过一些例子，然后自己写过一些ansible的playbook，对playbook有初步的了解，同时问题也有一些。<br>这本书是着重阐述怎么去设计一个结构良好，功能完善的playbook，内容还是不错的，官方文档或者入门书籍着重介绍ansible的各个功能，但是对如果组织使用这些功能探讨的不会太深。<br>再没看这本书之前，也许你和我一样，写出的playbook的role都只有main.yml文件，这本书是指导我们应该怎么样正确的规划我们的infrastructure，从而然后写出可复用的，模块化的playbook</p>
+<h3 id="读后感">读后感</h3><p>这本书从一个简单的例子，最直观的方式完成一个playbook，后续的章节，围绕这个例子做各种各样的重构。所以前后一贯，再看到后面的章节的时会不断的对之前的做法进行反思。 有些pragmatic的风格。<br>此外，例子中的output截图配上注释非常直观，便于理解。<br>最喜欢的是第九章，因为自己刚写了没多久的playbook，也一直考虑多环境的playbook该如何设计，并且dev和prod不会互相影响，又方便merge code，我觉得第二种方案实在太爽了，这里就不书透了，如果有相同问题，可以找来重点看看。</p>
+<h3 id="笔记">笔记</h3><ul>
+<li>pre-tasks和post-tasks可以用来在执行之前关闭和打开nagios</li>
+<li>delegate_to可以用来做从lb摘除web server之类的动作</li>
+<li>在playbook里指定serial参数用来限定每次执行的server个数</li>
+<li>wait_for用来检查状态很用帮助</li>
+<li>将安装和配置分离，用main.yml import install.yml 和 configure.yml, 让task 模块化  </li>
+<li>如果要用command/shell等模块，为了保持幂等性，可以使用creates和removes flag<ul>
+<li>如果command会创建一个文件，可以用creates flag来测试这个文件，如果已经存在，则不再做</li>
+<li>如果command的用途不是创建文件，也需要创建一个flag用来保持幂等性。</li>
+</ul>
+</li>
+<li>变量定义, ansible可以定义变量的地方实在是很多，书中有一节梳理的非常清晰</li>
+<li>多级变量需要merge的话，得打开hash_behaviour=merge，参见下面的例子</li>
+</ul>
+<h4 id="多级变量_merging_hashes">多级变量 merging hashes</h4><p>比如在default里定义了<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis:&#10;   config:&#10;      port: 6379&#10;      url: xxxx.redis.xxxx.com</span><br></pre></td></tr></table></figure><br>在 vars里定义了<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis:&#10;   config:&#10;      port: 4567</span><br></pre></td></tr></table></figure></p>
+<p>按照ansible default的行为，最终会用vars的replace default的，所以结果是vars的<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis:&#10;   config:&#10;      port: 4567</span><br></pre></td></tr></table></figure></p>
+<p>如果想得到merge的结果<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis:&#10;   config:&#10;      port: 4567&#10;      url: xxxx.redis.xxxx.com</span><br></pre></td></tr></table></figure><br>需要把配置改成<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># /etc/ansible/ansible.cfg&#10;hash_behaviour=merge</span><br></pre></td></tr></table></figure></p>
+<h4 id="jinja2的if_else写法">jinja2的if else写法</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;/% if condition %/&#125;&#10;    do_some_thing&#10;&#123;/% elif condition2 /%&#125;&#10;    do_another_thing&#10;&#123;/% else /%&#125;&#10;    do_something_else&#10;&#123;/% endif /%&#125;</span><br></pre></td></tr></table></figure>
+<p>看了书里的例子，这个写法可读性比较差，实在搞不定再考虑这种写法吧。</p>
+<h4 id="用ansible-galaxy_生成role的基本骨架，这样就省得自己去建role需要的各种目录了">用ansible-galaxy 生成role的基本骨架，这样就省得自己去建role需要的各种目录了</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible-galaxy init --init-path roles/ dynamod</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">dadeMacBook-Pro:zoom_xmpp darcy$ ansible-galaxy init --init-path roles/ dynamodb</span><br><span class="line">- dynamodb was created successfully</span><br><span class="line"></span><br><span class="line">dadeMacBook-Pro:zoom_xmpp darcy$ <span class="built_in">cd</span> roles/dynamodb/</span><br><span class="line">dadeMacBook-Pro:dynamodb darcy$ ll -R</span><br><span class="line">total <span class="number">8</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> darcy  staff  <span class="number">1328</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> README.md</span><br><span class="line">drwxr-xr-x  <span class="number">3</span> darcy  staff   <span class="number">102</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> defaults</span><br><span class="line">drwxr-xr-x  <span class="number">2</span> darcy  staff    <span class="number">68</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> files</span><br><span class="line">drwxr-xr-x  <span class="number">3</span> darcy  staff   <span class="number">102</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> handlers</span><br><span class="line">drwxr-xr-x  <span class="number">3</span> darcy  staff   <span class="number">102</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> meta</span><br><span class="line">drwxr-xr-x  <span class="number">3</span> darcy  staff   <span class="number">102</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> tasks</span><br><span class="line">drwxr-xr-x  <span class="number">2</span> darcy  staff    <span class="number">68</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> templates</span><br><span class="line">drwxr-xr-x  <span class="number">3</span> darcy  staff   <span class="number">102</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> vars</span><br><span class="line"></span><br><span class="line">./defaults:</span><br><span class="line">total <span class="number">8</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> darcy  staff  <span class="number">33</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> main.yml</span><br><span class="line"></span><br><span class="line">./files:</span><br><span class="line"></span><br><span class="line">./handlers:</span><br><span class="line">total <span class="number">8</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> darcy  staff  <span class="number">33</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> main.yml</span><br><span class="line"></span><br><span class="line">./meta:</span><br><span class="line">total <span class="number">8</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> darcy  staff  <span class="number">2373</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> main.yml</span><br><span class="line"></span><br><span class="line">./tasks:</span><br><span class="line">total <span class="number">8</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> darcy  staff  <span class="number">30</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> main.yml</span><br><span class="line"></span><br><span class="line">./templates:</span><br><span class="line"></span><br><span class="line">./vars:</span><br><span class="line">total <span class="number">8</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> darcy  staff  <span class="number">29</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> main.yml</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="简介">简介</h3><p>个人觉得在阅读这本书前，最好读一些基础的ansible书籍，看过一些例子，然后自己写过一些ansible的playbook，对playbook有初步的了解，同时问题也有一些。<br>这本书是着重阐述怎么去设计一个结构良好，功能完善的pl]]>
+    </summary>
+    
+      <category term="ansible" scheme="http://yoursite.com/tags/ansible/"/>
+    
+      <category term="reading-notes" scheme="http://yoursite.com/tags/reading-notes/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[扇贝上背完第一本单词书]]></title>

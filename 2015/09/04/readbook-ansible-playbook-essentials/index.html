@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="DevOps:~/erlang darcy$">
+    <title>阅读笔记- 《Ansible Playbook Essentials》 - DevOps:~/erlang darcy$</title>
+    <meta name="author" content="Darcy Song">
+    <meta name="description" content="DevOps:~/erlang darcy$">
+    <link rel="icon" href="../../../../assets/images/null">
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="atom.xml">
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="../../../../assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9072df043851504f329ae43d7ff0aff4";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="1">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="http://yoursite.com">DevOps:~/erlang darcy$</a>
+    </h1>
+    
+        <a class="header-right-picture" href="../../../../#about">
+            <img class="header-picture" src="../../../../assets/images/ace_small_icon.jpg"/>
+        </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="1">
+    
+    <div class="sidebar-profile">
+        <a href="../../../../#about">
+            
+            <img class="sidebar-profile-picture" src="../../../../assets/images/ace_small_icon.jpg"/>
+            
+        </a>
+        <span class="sidebar-profile-name">Darcy Song</span>
+    </div>
+    
+    
+    <ul class="sidebar-buttons">
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="../../../../index.html">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="../../../../all-categories">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="../../../../all-tags">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="../../../../all-archives">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">存档</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link st-search-show-outputs" href="../../../../#search">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="../../../../#about">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About me</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+    <ul class="sidebar-buttons">
+        
+    </ul>
+    
+    <ul class="sidebar-buttons">
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="../../../../atom.xml">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+            <div id="main" data-behavior="1">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+        <div class="post-header main-content-wrap">
+    
+        <h1 class="post-title" itemprop="headline">阅读笔记- 《Ansible Playbook Essentials》</h1>
+    
+    <div class="post-meta">
+    <time  itemprop="datePublished" content="Fri Sep 04 2015 14:16:28 GMT+0800">
+        Sep 04, 2015
+    </time>
+    
+</div>
+</div>
+    
+    <div class="post-content markdown main-content-wrap" itemprop="articleBody">
+        <h3 id="简介">简介</h3><p>个人觉得在阅读这本书前，最好读一些基础的ansible书籍，看过一些例子，然后自己写过一些ansible的playbook，对playbook有初步的了解，同时问题也有一些。<br>这本书是着重阐述怎么去设计一个结构良好，功能完善的playbook，内容还是不错的，官方文档或者入门书籍着重介绍ansible的各个功能，但是对如果组织使用这些功能探讨的不会太深。<br>再没看这本书之前，也许你和我一样，写出的playbook的role都只有main.yml文件，这本书是指导我们应该怎么样正确的规划我们的infrastructure，从而然后写出可复用的，模块化的playbook</p>
+<h3 id="读后感">读后感</h3><p>这本书从一个简单的例子，最直观的方式完成一个playbook，后续的章节，围绕这个例子做各种各样的重构。所以前后一贯，再看到后面的章节的时会不断的对之前的做法进行反思。 有些pragmatic的风格。<br>此外，例子中的output截图配上注释非常直观，便于理解。<br>最喜欢的是第九章，因为自己刚写了没多久的playbook，也一直考虑多环境的playbook该如何设计，并且dev和prod不会互相影响，又方便merge code，我觉得第二种方案实在太爽了，这里就不书透了，如果有相同问题，可以找来重点看看。</p>
+<h3 id="笔记">笔记</h3><ul>
+<li>pre-tasks和post-tasks可以用来在执行之前关闭和打开nagios</li>
+<li>delegate_to可以用来做从lb摘除web server之类的动作</li>
+<li>在playbook里指定serial参数用来限定每次执行的server个数</li>
+<li>wait_for用来检查状态很用帮助</li>
+<li>将安装和配置分离，用main.yml import install.yml 和 configure.yml, 让task 模块化  </li>
+<li>如果要用command/shell等模块，为了保持幂等性，可以使用creates和removes flag<ul>
+<li>如果command会创建一个文件，可以用creates flag来测试这个文件，如果已经存在，则不再做</li>
+<li>如果command的用途不是创建文件，也需要创建一个flag用来保持幂等性。</li>
+</ul>
+</li>
+<li>变量定义, ansible可以定义变量的地方实在是很多，书中有一节梳理的非常清晰</li>
+<li>多级变量需要merge的话，得打开hash_behaviour=merge，参见下面的例子</li>
+</ul>
+<h4 id="多级变量_merging_hashes">多级变量 merging hashes</h4><p>比如在default里定义了<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis:&#10;   config:&#10;      port: 6379&#10;      url: xxxx.redis.xxxx.com</span><br></pre></td></tr></table></figure><br>在 vars里定义了<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis:&#10;   config:&#10;      port: 4567</span><br></pre></td></tr></table></figure></p>
+<p>按照ansible default的行为，最终会用vars的replace default的，所以结果是vars的<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis:&#10;   config:&#10;      port: 4567</span><br></pre></td></tr></table></figure></p>
+<p>如果想得到merge的结果<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis:&#10;   config:&#10;      port: 4567&#10;      url: xxxx.redis.xxxx.com</span><br></pre></td></tr></table></figure><br>需要把配置改成<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># /etc/ansible/ansible.cfg&#10;hash_behaviour=merge</span><br></pre></td></tr></table></figure></p>
+<h4 id="jinja2的if_else写法">jinja2的if else写法</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;/% if condition %/&#125;&#10;    do_some_thing&#10;&#123;/% elif condition2 /%&#125;&#10;    do_another_thing&#10;&#123;/% else /%&#125;&#10;    do_something_else&#10;&#123;/% endif /%&#125;</span><br></pre></td></tr></table></figure>
+<p>看了书里的例子，这个写法可读性比较差，实在搞不定再考虑这种写法吧。</p>
+<h4 id="用ansible-galaxy_生成role的基本骨架，这样就省得自己去建role需要的各种目录了">用ansible-galaxy 生成role的基本骨架，这样就省得自己去建role需要的各种目录了</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible-galaxy init --init-path roles/ dynamod</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">dadeMacBook-Pro:zoom_xmpp darcy$ ansible-galaxy init --init-path roles/ dynamodb</span><br><span class="line">- dynamodb was created successfully</span><br><span class="line"></span><br><span class="line">dadeMacBook-Pro:zoom_xmpp darcy$ <span class="built_in">cd</span> roles/dynamodb/</span><br><span class="line">dadeMacBook-Pro:dynamodb darcy$ ll -R</span><br><span class="line">total <span class="number">8</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> darcy  staff  <span class="number">1328</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> README.md</span><br><span class="line">drwxr-xr-x  <span class="number">3</span> darcy  staff   <span class="number">102</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> defaults</span><br><span class="line">drwxr-xr-x  <span class="number">2</span> darcy  staff    <span class="number">68</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> files</span><br><span class="line">drwxr-xr-x  <span class="number">3</span> darcy  staff   <span class="number">102</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> handlers</span><br><span class="line">drwxr-xr-x  <span class="number">3</span> darcy  staff   <span class="number">102</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> meta</span><br><span class="line">drwxr-xr-x  <span class="number">3</span> darcy  staff   <span class="number">102</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> tasks</span><br><span class="line">drwxr-xr-x  <span class="number">2</span> darcy  staff    <span class="number">68</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> templates</span><br><span class="line">drwxr-xr-x  <span class="number">3</span> darcy  staff   <span class="number">102</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> vars</span><br><span class="line"></span><br><span class="line">./defaults:</span><br><span class="line">total <span class="number">8</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> darcy  staff  <span class="number">33</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> main.yml</span><br><span class="line"></span><br><span class="line">./files:</span><br><span class="line"></span><br><span class="line">./handlers:</span><br><span class="line">total <span class="number">8</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> darcy  staff  <span class="number">33</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> main.yml</span><br><span class="line"></span><br><span class="line">./meta:</span><br><span class="line">total <span class="number">8</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> darcy  staff  <span class="number">2373</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> main.yml</span><br><span class="line"></span><br><span class="line">./tasks:</span><br><span class="line">total <span class="number">8</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> darcy  staff  <span class="number">30</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> main.yml</span><br><span class="line"></span><br><span class="line">./templates:</span><br><span class="line"></span><br><span class="line">./vars:</span><br><span class="line">total <span class="number">8</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> darcy  staff  <span class="number">29</span> Sep  <span class="number">4</span> <span class="number">15</span>:<span class="number">44</span> main.yml</span><br></pre></td></tr></table></figure>
+
+        
+            
+        
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="../../../../tags/index.html">ansible</a> <a class="tag tag--primary tag--small t-link" href="../../../../tags/index.html">reading-notes</a>
+
+            </div>
+        
+        <!-- 多说评论框 start -->
+        	<div class="ds-thread" data-thread-key="post-readbook-ansible-playbook-essentials" data-title="阅读笔记- 《Ansible Playbook Essentials》" data-url="http://yoursite.com/2015/09/04/readbook-ansible-playbook-essentials/index.html"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"darcys"};
+        	(function() {
+        		var ds = document.createElement('script');
+        		ds.type = 'text/javascript';ds.async = true;
+        		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        		ds.charset = 'UTF-8';
+        		(document.getElementsByTagName('head')[0]
+        		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+        	})();
+        	</script>
+        <!-- 多说公共JS代码 end -->
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="../../05/reading-notes-ansible-up-and-running/index.html"  data-tooltip="reading-notes-ansible-up-and-running">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="../../../07/15/title-shanbay-firstbook/index.html" data-tooltip="扇贝上背完第一本单词书">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/09/04/readbook-ansible-playbook-essentials/index.html">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/09/04/readbook-ansible-playbook-essentials/index.html">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/09/04/readbook-ansible-playbook-essentials/index.html">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Darcy Song. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="../../05/reading-notes-ansible-up-and-running/index.html"  data-tooltip="reading-notes-ansible-up-and-running">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="../../../07/15/title-shanbay-firstbook/index.html" data-tooltip="扇贝上背完第一本单词书">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/09/04/readbook-ansible-playbook-essentials/index.html">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/09/04/readbook-ansible-playbook-essentials/index.html">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/09/04/readbook-ansible-playbook-essentials/index.html">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+
+                </div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="../../../../assets/images/ace_small_icon.jpg"/>
+        
+            <h4 id="about-card-name">Darcy Song</h4>
+        
+            <h5 id="about-card-bio"><p>生活希望简单低碳一些，所以总是一张公交卡就出发；远离社交网络，会不会是对程序员最大的讽刺；喜欢健身，咖啡，乱七八糟的音乐；希望未来几年能多走一些艰难而又不会太危险的地方；最后，这次一定不要变成技术流水账。</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>程序员 | Devops</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                苏州，中国
+            </h5>
+        
+    </div>
+</div>
+        <div id="cover" style="background-image:url('/assets/images/1957136.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="../../../../assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>
