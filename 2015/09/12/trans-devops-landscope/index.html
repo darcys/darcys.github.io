@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="DevOps:~/erlang darcy$">
+    <title>=翻译= 2015年devops一览-management层的竞争 - DevOps:~/erlang darcy$</title>
+    <meta name="author" content="Darcy Song">
+    <meta name="description" content="DevOps:~/erlang darcy$">
+    <link rel="icon" href="../../../../assets/images/null">
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="atom.xml">
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="../../../../assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?9072df043851504f329ae43d7ff0aff4";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="1">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="http://yoursite.com">DevOps:~/erlang darcy$</a>
+    </h1>
+    
+        <a class="header-right-picture" href="../../../../#about">
+            <img class="header-picture" src="../../../../assets/images/ace_small_icon.jpg"/>
+        </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="1">
+    
+    <div class="sidebar-profile">
+        <a href="../../../../#about">
+            
+            <img class="sidebar-profile-picture" src="../../../../assets/images/ace_small_icon.jpg"/>
+            
+        </a>
+        <span class="sidebar-profile-name">Darcy Song</span>
+    </div>
+    
+    
+    <ul class="sidebar-buttons">
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="../../../../index.html">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="../../../../all-categories">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="../../../../all-tags">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="../../../../all-archives">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">存档</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link st-search-show-outputs" href="../../../../#search">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="../../../../#about">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About me</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+    <ul class="sidebar-buttons">
+        
+    </ul>
+    
+    <ul class="sidebar-buttons">
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="../../../../atom.xml">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+            <div id="main" data-behavior="1">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+        <div class="post-header main-content-wrap">
+    
+        <h1 class="post-title" itemprop="headline">=翻译= 2015年devops一览-management层的竞争</h1>
+    
+    <div class="post-meta">
+    <time  itemprop="datePublished" content="Sat Sep 12 2015 17:16:19 GMT+0800">
+        Sep 12, 2015
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="../../../../categories/index.html">翻译</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown main-content-wrap" itemprop="articleBody">
+        <blockquote>
+<p>If you don’t like something, change it. If you can’t change it, change your attitude.<br>如果你不喜欢某事，那就去改变它。如果你不能改变它，那就改变你自己的态度。</p>
+<blockquote>
+<p>玛雅·安吉罗</p>
+</blockquote>
+</blockquote>
+<h3 id="文章简介">文章简介</h3><p>the new stack 上一篇非常赞的文章，是对当先management layer的一览<br><a href="http://thenewstack.io/devops-landscape-2015-the-race-to-the-management-layer/" target="_blank" rel="external">http://thenewstack.io/devops-landscape-2015-the-race-to-the-management-layer/</a></p>
+<p>看完之后觉得很清晰，所以翻译一方面是自己加深理解，另一方面也希望对大家有点帮助<br>由于自己翻译水平很差，还挺怕误导大家，发现不对的还请指正</p>
+<p><img src="http://thenewstack.io/wp-content/uploads/2015/06/13909475735_783a17c607_k.jpg" alt=""></p>
+<blockquote>
+<p>Kevin Fishner is director of customer success at HashiCorp, a leader in the DevOps marketplace. Author note: As an actor in the DevOps ecosystem, we certainly have biases.<br>This summary is our view of the current DevOps environment backed by our experiences and the experiences of our customers. It is not exhaustive.</p>
+</blockquote>
+<p>作者简介，作为devops生态圈的从业者，我们肯定会有些曲解，这个总结是基于我们以及客户的经验，对当前devops生态圈的一些看法，并不彻底。</p>
+<blockquote>
+<p>There has been so much activity in DevOps tooling and best practices in the past few months that it has become difficult to understand the current and future state of the industry. This summary is the outcome of explaining HashiCorp’s thoughts on the current DevOps landscape and future roadmap.</p>
+</blockquote>
+<p>过去几个月有太多的活动是关于DevOps的tools和最佳实践，以至于我们很难理解当前和未来发展的状态，这个总结是HashiCorp公司对于devops概览和未来发展呢的一些解释</p>
+<blockquote>
+<p>The Goal of DevOps is to Turn Application Code Into a Running Application Through a Repeatable, Safe Process</p>
+</blockquote>
+<h2 id="DevOps的目标是让application的code通过一个可重复安全的流程deploy到产品线变成运行的程序">DevOps的目标是让application的code通过一个可重复安全的流程deploy到产品线变成运行的程序</h2><blockquote>
+<p>“DevOps” as a term has many meanings, but for the purposes of this summary “DevOps” will be defined by its goal. Across organizations, the goal of DevOps is to turn application code into a running application through a repeatable, safe process.</p>
+</blockquote>
+<p>DevOps是个有很多解释的术语，但是对于这篇总结，devops是通过它的目标来定义的。DevOps的目标是让application的code通过一个可重复安全的流程deploy到产品线变成运行的程序。</p>
+<p><img src="http://7xk2xu.com1.z0.glb.clouddn.com/20150912image00-1-1024x250.png" alt=""></p>
+<blockquote>
+<p>The Road to a Complete DevOps Management Layer: Configuration Management vs Immutable Infrastructure</p>
+</blockquote>
+<h2 id="通往全面的DevOps_Management层之路：配置管理_vs_不变的Infrastructure">通往全面的DevOps Management层之路：配置管理 vs 不变的Infrastructure</h2><blockquote>
+<p>Darcy: 感觉这翻译真不好整啊，比写代码难，这句英文那么通顺，换成中文就不知道该咋说了 #_#</p>
+<p>There are two paradigms to provide a complete management layer for delivering applications</p>
+</blockquote>
+<p>为了递交程序，有两种模式可以实现全面的管理层</p>
+<blockquote>
+<h2 id="Paradigm_1:_Runtime_Configuration-">Paradigm 1: Runtime Configuration.</h2><p>In this view, the workflow from application code to running application is provision a server; configure the server with dependencies and application code; and monitor application and server health with scheduled, continuous configuration management runs.</p>
+</blockquote>
+<h2 id="模式1：_实时的配置">模式1： 实时的配置</h2><p>在这个视图， 从代码到运行的程序的工作流是:</p>
+<ul>
+<li>provision一台server</li>
+<li>在这台server上安装进行系统配置，安装依赖和应用程序</li>
+<li>安装monitoring和一些cron job</li>
+</ul>
+<blockquote>
+<h2 id="Paradigm_2:_Immutable_Infrastructure-">Paradigm 2: Immutable Infrastructure.</h2><p>In this view, the workflow from application code to running application code is to package the application into a deployable artifact, such as a Docker container, AMI, jar, etc; then provision the server in the likeness of that artifact; and finally, monitor application and server health. It is very important to note that immutable infrastructure and configuration management are not mutually exclusive. Configuration management tools are often used to configure build-time artifacts.</p>
+</blockquote>
+<h2 id="模式2：不变的Infrastructure">模式2：不变的Infrastructure</h2><p>在这个视图里，从代码到运行的程序的工作流是将应用程序打包到一个可以直接部署的artifact中，比如Docker， Ami，jar等等,然后用这个artifact provision一台server，最终监控应用程序和健康状况<br>需要注意的是，配置管理和不变的Infrastructure不是互斥的，配置管理工具通常用来配置build阶段的artifacts</p>
+<blockquote>
+<p>The key difference between immutable infrastructure and configuration management paradigms is at what point configuration occurs. In the immutable infrastructure view configuration happens at build-time, before deployment. In the configuration management view configuration happens at runtime, after deployment. To make a service change in the immutable infrastructure world, a new artifact is built, the old service is destroyed, and a new service is brought up using the new artifact. The service is never changed once it has been deployed, and thus why this paradigm is called “immutable” infrastructure. To make a service change in the configuration management world, the same server is updated with new service code. Again, these paradigms are not mutually exclusive, as configuration management tools are often used to help build build-time artifacts.</p>
+</blockquote>
+<p>这两个模式最关键的区别在于配置何时发生：</p>
+<ul>
+<li>对于Immutable Infrastructure，config是在build时做的，在deployment之前</li>
+<li>对于配置管理，配置是运行时做的，在deployment之后</li>
+</ul>
+<p>对于这两个模式，当要对server进行改动时的区别：</p>
+<ul>
+<li>对于Immutable Infrastructure，由于配置是发生在build time，那么理所当然，配置更改时，需要重新build artifact，因此老的server需要destroy掉，然后用新的artifact创建新的server,server在deploy后永远不会改变，所以这个方式被称作“immutable” </li>
+<li>对于配置管理，相同的server被新的配置管理的code更新。</li>
+</ul>
+<p>再次重申，这两个不是互斥的，配置管理工具经常被用来构建artifacts</p>
+<blockquote>
+<p>There’s arguably a nascent third paradigm, which treats servers as a generic resource pool which heterogeneous workloads are scheduled on top of. This technically fits under the immutable infrastructure paradigm, but is unique enough to define independently. This paradigm is in active development as Mesos, Kubernetes, Docker Swarm, and various other schedulers gain in popularity.</p>
+</blockquote>
+<p>还有个可论证的刚出现的第三种模式，这个模式把server当做一个通用的资源池，这个池子顶层安排有各式各样的工作，这项技术适合Immutable Infrastructure模式，但是足够特殊到可以单独定义。这个模式是正在活跃的开发中，比如Mesos，Kubernetes和Docker Swarm和多种其他产品等</p>
+<blockquote>
+<h2 id="The_Management_Layer_is_the_Revenue_Opportunity_in_DevOps">The Management Layer is the Revenue Opportunity in DevOps</h2><p>There are three basic layers in DevOps — infrastructure, tooling, and management:</p>
+</blockquote>
+<h2 id="管理层是DevOps是盈利点">管理层是DevOps是盈利点</h2><p>基本上DevOps有三层： infrastructure， tooling 和 management<br><img src="http://7xk2xu.com1.z0.glb.clouddn.com/20150912image01.png" alt=""></p>
+<ul>
+<li><blockquote>
+<h3 id="The_infrastructure_layer">The infrastructure layer</h3><p>is comprised of technology that provides virtualization functionality to physical hardware to make compute, network and storage easily accessible. Example technologies are Amazon’s EC2 and Google Compute Engine in the public cloud arena, along with VMware and OpenStack in the private cloud arena.</p>
+</blockquote>
+</li>
+</ul>
+<p>infrastructure层主要提供虚拟化的基础设施，比如在公有云方面，有亚马逊aws，谷歌的GAE。在私有云方面，有openstack和vmware</p>
+<ul>
+<li><blockquote>
+<h3 id="The_tooling_layer">The tooling layer</h3><p>is comprised of technologies that make access and configuration of the infrastructure layer an easier process. These tools still require functional knowledge of the underlying infrastructure. Examples here are the open source tools by HashiCorp, Mesos, Docker, Puppet, Chef, Jenkins and many, many more. It’s interesting that the majority of the tooling layer is comprised of open source software.</p>
+</blockquote>
+</li>
+</ul>
+<p>tooling层是为了简化接入管理和infrastructure层的流程，这些工具仍然需要基本的infrastructure知识，这里有些例子，比如HashiCorp, Mesos, Docker, Puppet, Chef, Jenkins和其他许多，有趣的是，这一层基本都是开源的。</p>
+<ul>
+<li><blockquote>
+<h3 id="The_management_layer">The management layer</h3><p>is at the top and has the goal of abstracting away both the tooling and infrastructure layers into one common workflow for turning application code into a running application. An example end goal would be to just package your application — potentially as a Docker container, rkt container, jar or binary — and have it be able to run on any cloud or physical infrastructure. Ideally, no knowledge of the infrastructure itself is necessary and all the logic is held at the application level.</p>
+</blockquote>
+</li>
+</ul>
+<p>管理层是最上层，目标是将tooling and infrastructure layers 合并为一个通用的工作流</p>
+
+        
+            
+        
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="../../../../tags/index.html">devops</a>
+
+            </div>
+        
+        <!-- 多说评论框 start -->
+        	<div class="ds-thread" data-thread-key="post-trans-devops-landscope" data-title="=翻译= 2015年devops一览-management层的竞争" data-url="http://yoursite.com/2015/09/12/trans-devops-landscope/index.html"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"darcys"};
+        	(function() {
+        		var ds = document.createElement('script');
+        		ds.type = 'text/javascript';ds.async = true;
+        		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        		ds.charset = 'UTF-8';
+        		(document.getElementsByTagName('head')[0]
+        		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+        	})();
+        	</script>
+        <!-- 多说公共JS代码 end -->
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="../powerline/index.html" data-tooltip="美化自己的命令行环境，增加漂亮的状态行，安装使用powerline">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/09/12/trans-devops-landscope/index.html">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/09/12/trans-devops-landscope/index.html">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/09/12/trans-devops-landscope/index.html">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 Darcy Song. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="../powerline/index.html" data-tooltip="美化自己的命令行环境，增加漂亮的状态行，安装使用powerline">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/09/12/trans-devops-landscope/index.html">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/09/12/trans-devops-landscope/index.html">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/09/12/trans-devops-landscope/index.html">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+
+                </div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="../../../../assets/images/ace_small_icon.jpg"/>
+        
+            <h4 id="about-card-name">Darcy Song</h4>
+        
+            <h5 id="about-card-bio"><p>生活希望简单低碳一些，所以总是一张公交卡就出发；远离社交网络，会不会是对程序员最大的讽刺；喜欢健身，咖啡，乱七八糟的音乐；希望未来几年能多走一些艰难而又不会太危险的地方；最后，这次一定不要变成技术流水账。</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>程序员 | Devops</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                苏州，中国
+            </h5>
+        
+    </div>
+</div>
+        <div id="cover" style="background-image:url('/assets/images/1957136.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="../../../../assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>
