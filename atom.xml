@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-02T06:57:16.000Z</updated>
+  <updated>2016-06-02T07:00:58.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,31 +16,26 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Jenkins 2.0 pipeline 学习</title>
     <link href="http://yoursite.com/2016/06/02/Learning-Jenkins-2-0-pipeline/index.html"/>
     <id>http://yoursite.com/2016/06/02/Learning-Jenkins-2-0-pipeline/index.html</id>
-    <published>2016-06-02T06:57:16.000Z</published>
-    <updated>2016-06-02T06:57:16.000Z</updated>
+    <published>2016-06-02T06:47:53.000Z</published>
+    <updated>2016-06-02T07:00:58.000Z</updated>
     
-    <content type="html">&lt;p&gt;title:  Jenkins 2.0 pipeline 学习&lt;br&gt;date: 2016-06-02 14:47:53&lt;br&gt;tags:&lt;br&gt;categories:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Devops&lt;br&gt;tags: &lt;/li&gt;
-&lt;li&gt;jenkins&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;长久以来,jenkins不能通过code管理config都是个缺点,我说的code管理不仅仅是配置保存的git/svn,而是每个jenkins的配置都能先进git/svn,&lt;br&gt;再有个jenkins的功能能获取config的更新,自动更新jenkins的job,这样jenkins的管理也就可控了,任何变更都可review和追溯,做到真正的code as&lt;/p&gt;
+    <content type="html">&lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;长久以来,jenkins不能通过code管理config都是个缺点,我说的code管理不仅仅是配置保存的git/svn,而是每个jenkins的配置都能先进git/svn,&lt;br&gt;再有个jenkins的功能能获取config的更新,自动更新jenkins的job,这样jenkins的管理也就可控了,任何变更都可review和追溯,做到真正的code as&lt;/p&gt;
 &lt;h3 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;目的&lt;/h3&gt;&lt;p&gt;大概简单试用了一下Jenkins 2.0的pipeline功能, 看了jenkinsfile和一些dsl的介绍,比想象中的功能要强很多.&lt;br&gt;所以想系统的学习一下,看看没有可能通过jenkinsfile直接替换job config的定义.&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;title:  Jenkins 2.0 pipeline 学习&lt;br&gt;date: 2016-06-02 14:47:53&lt;br&gt;tags:&lt;br&gt;categories:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Devops&lt;br&gt;tags: &lt;/li&gt;
-&lt;li&gt;jenkins&lt;/li&gt;
-
+      &lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;长久以来,jenkins不能通过code管理config都是个缺点,我说的code管理不仅仅是配置保存的git/svn,而是每个jenkin
     
     </summary>
     
+      <category term="Devops" scheme="http://yoursite.com/categories/Devops/"/>
+    
+    
+      <category term="jenkins" scheme="http://yoursite.com/tags/jenkins/"/>
     
   </entry>
   
