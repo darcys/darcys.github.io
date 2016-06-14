@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>DevOps:~/erlang darcy$</title>
-  
+  <title>达西的流水账</title>
+  <subtitle>工作/健身/街舞</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-02T07:00:58.000Z</updated>
+  <updated>2016-06-02T08:51:40.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,74 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>reading-notes-Creating-Development-Environments-with-Vagrant</title>
+    <link href="http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html"/>
+    <id>http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html</id>
+    <published>2016-06-02T07:35:53.000Z</published>
+    <updated>2016-06-02T08:51:40.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;初衷&quot;&gt;&lt;a href=&quot;#初衷&quot; class=&quot;headerlink&quot; title=&quot;初衷&quot;&gt;&lt;/a&gt;初衷&lt;/h3&gt;&lt;p&gt;写了一些ansible,docker相关的代码,经常想本地调试一下,尤其希望能有一个标准的干净的环境能测试.&lt;br&gt;之前对Vagrant稍有了解,借这次机会好好学习一下.&lt;br&gt;最终目标是希望能一个setup.sh把所有的脚本代码都黏在一块儿.launch一套完整的系统.&lt;/p&gt;
+&lt;h3 id=&quot;这句话挺吸引人&quot;&gt;&lt;a href=&quot;#这句话挺吸引人&quot; class=&quot;headerlink&quot; title=&quot;这句话挺吸引人&quot;&gt;&lt;/a&gt;这句话挺吸引人&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;“New team members can be onboarded to new projects as easy as git clone &amp;amp;&amp;amp; vagrant up”&lt;br&gt; Excerpt From: Michael Peacock. “Creating Development Environments with Vagrant - Second Edition.” iBooks. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;阅读简单笔记&quot;&gt;&lt;a href=&quot;#阅读简单笔记&quot; class=&quot;headerlink&quot; title=&quot;阅读简单笔记&quot;&gt;&lt;/a&gt;阅读简单笔记&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;install virtualbox&lt;/li&gt;
+&lt;li&gt;install vagrant &lt;a href=&quot;https://www.vagrantup.com/downloads.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.vagrantup.com/downloads.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;vagrant init –force hashicorp/precise64 生成vagrantfile&lt;/li&gt;
+&lt;li&gt;vagrant up 把precise64launch起来,因为本地没有box文件,所以远程下载&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://atlas.hashicorp.com/boxes/search?utf8=✓&amp;amp;sort=&amp;amp;provider=virtualbox&amp;amp;q=centos&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://atlas.hashicorp.com/boxes/search?utf8=✓&amp;amp;sort=&amp;amp;provider=virtualbox&amp;amp;q=centos&lt;/a&gt; 这里可以找到自己需要的box&lt;/li&gt;
+&lt;li&gt;我需要centos 7.1,所以按照此页面&lt;a href=&quot;https://atlas.hashicorp.com/bento/boxes/centos-7.1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://atlas.hashicorp.com/bento/boxes/centos-7.1&lt;/a&gt;, 执行 vagrant init bento/centos-7.1; vagrant up –provider parallels&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;初衷&quot;&gt;&lt;a href=&quot;#初衷&quot; class=&quot;headerlink&quot; title=&quot;初衷&quot;&gt;&lt;/a&gt;初衷&lt;/h3&gt;&lt;p&gt;写了一些ansible,docker相关的代码,经常想本地调试一下,尤其希望能有一个标准的干净的环境能测试.&lt;br&gt;之前对Vagrant稍有
+    
+    </summary>
+    
+      <category term="读书笔记-技术类" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%8A%80%E6%9C%AF%E7%B1%BB/"/>
+    
+    
+      <category term="reading-notes" scheme="http://yoursite.com/tags/reading-notes/"/>
+    
+      <category term="Vagrant" scheme="http://yoursite.com/tags/Vagrant/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重拾hexo,git blog走起</title>
+    <link href="http://yoursite.com/2016/06/02/reuse-hexo/index.html"/>
+    <id>http://yoursite.com/2016/06/02/reuse-hexo/index.html</id>
+    <published>2016-06-02T07:11:48.000Z</published>
+    <updated>2016-06-02T07:28:51.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;好久没有更新了&quot;&gt;&lt;a href=&quot;#好久没有更新了&quot; class=&quot;headerlink&quot; title=&quot;好久没有更新了&quot;&gt;&lt;/a&gt;好久没有更新了&lt;/h3&gt;&lt;p&gt;上次更新还是去年,有些东西真是一放就是很那拿起来,沉下心花了1个多小时把npm, hexo还有一堆插件都升了升级,然后fix了一些问题,又开始了.&lt;br&gt;过了一年变化不少:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;公司的一个项目上线,那阵压力特别大,不过现在系统很平稳了,学习了很多,也收货了很多,对aws的devops工作比较深入.&lt;/li&gt;
+&lt;li&gt;新的项目开始玩serverless,这个开源项目关注aws的应该都知道, aws的microservice解决方案, 话说microservice这个词,去年自从有本书出来后,到今年基本就烂大街了,到处都在谈这个.&lt;/li&gt;
+&lt;li&gt;去年压力最大的时候每天还是要保持运动量,9月份无意接触了街舞, 报名学习了lockin和hiphop,跟了两学期的课,认识了很多朋友和老师,非常懵逼的上了6,7节大师课,也算人生的一片新天地,虽然我这个年纪只能是强身健体娱乐为主,但是!跳舞,我们是认真的.&lt;/li&gt;
+&lt;li&gt;目前开始玩docker的pipeline, 公司的主打项目的运维方式想提高自动化能力,于是结合jenkins,ansible,docker等做一套CD的系统,也挺有意思.&lt;br&gt;其实想分享的很多,但是往往过了这村就没这个店了,最想分享的时候没时间,过了这个时间点,也不一定能写出来什么东西&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;这次升级刨的坑&quot;&gt;&lt;a href=&quot;#这次升级刨的坑&quot; class=&quot;headerlink&quot; title=&quot;这次升级刨的坑&quot;&gt;&lt;/a&gt;这次升级刨的坑&lt;/h3&gt;&lt;h4 id=&quot;TypeError-Cannot-read-property-‘compile’-of-undefined-on-Mac&quot;&gt;&lt;a href=&quot;#TypeError-Cannot-read-property-‘compile’-of-undefined-on-Mac&quot; class=&quot;headerlink&quot; title=&quot;TypeError: Cannot read property ‘compile’ of undefined on Mac&quot;&gt;&lt;/a&gt;TypeError: Cannot read property ‘compile’ of undefined on Mac&lt;/h4&gt;&lt;p&gt;我用的皮肤是tranquilpeak, 升级hexo后generate出错,无需降级的解决方案: &lt;/p&gt;
+&lt;figure class=&quot;highlight zsh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;change &lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt;/_css/layout into &lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt;/_css/layouts and modify related lines &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt;/_css/tranquilpeak.scss&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@import&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;layouts/about&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;layouts/blog&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;layouts/bottom-bar&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;layouts/cover&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;layouts/footer&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;layouts/header&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;layouts/main&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;layouts/sidebar&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;TypeError-this-relative-url-is-not-a-function&quot;&gt;&lt;a href=&quot;#TypeError-this-relative-url-is-not-a-function&quot; class=&quot;headerlink&quot; title=&quot;TypeError: this.relative_url is not a function&quot;&gt;&lt;/a&gt;TypeError: this.relative_url is not a function&lt;/h4&gt;&lt;p&gt;修改_config.yml 为 relative_link: false&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;好久没有更新了&quot;&gt;&lt;a href=&quot;#好久没有更新了&quot; class=&quot;headerlink&quot; title=&quot;好久没有更新了&quot;&gt;&lt;/a&gt;好久没有更新了&lt;/h3&gt;&lt;p&gt;上次更新还是去年,有些东西真是一放就是很那拿起来,沉下心花了1个多小时把npm, hexo还有一堆插
+    
+    </summary>
+    
+      <category term="个人" scheme="http://yoursite.com/categories/%E4%B8%AA%E4%BA%BA/"/>
+    
+    
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+  </entry>
   
   <entry>
     <title>Jenkins 2.0 pipeline 学习</title>
