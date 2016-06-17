@@ -6,29 +6,23 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="达西的流水账">
-    <title>阅读笔记- 《Creating Development Environments with Vagrant》 - 达西的流水账</title>
+    <title>git practice - 当devel branch和release branch不能完全merge - 达西的流水账</title>
     <meta name="author" content="Darcy Song">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="初衷写了一些ansible,docker相关的代码,经常想本地调试一下,尤其希望能有一个标准的干净的环境能测试.之前对Vagrant稍有了解,借这次机会好好学习一下.最终目标是希望能一个setup.sh把所有的脚本代码都黏在一块儿.launch一套完整的系统.
-这句话挺吸引人
-“New team members can be onboarded to new projects as easy as">
+    <meta name="description" content="问题描述要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="阅读笔记- 《Creating Development Environments with Vagrant》">
-<meta property="og:url" content="http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html">
+<meta property="og:title" content="git practice - 当devel branch和release branch不能完全merge">
+<meta property="og:url" content="http://yoursite.com/2016/06/17/git-practice/index.html">
 <meta property="og:site_name" content="达西的流水账">
-<meta property="og:description" content="初衷写了一些ansible,docker相关的代码,经常想本地调试一下,尤其希望能有一个标准的干净的环境能测试.之前对Vagrant稍有了解,借这次机会好好学习一下.最终目标是希望能一个setup.sh把所有的脚本代码都黏在一块儿.launch一套完整的系统.
-这句话挺吸引人
-“New team members can be onboarded to new projects as easy as">
-<meta property="og:updated_time" content="2016-06-16T09:23:47.000Z">
+<meta property="og:description" content="问题描述要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包">
+<meta property="og:updated_time" content="2016-06-17T06:45:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阅读笔记- 《Creating Development Environments with Vagrant》">
-<meta name="twitter:description" content="初衷写了一些ansible,docker相关的代码,经常想本地调试一下,尤其希望能有一个标准的干净的环境能测试.之前对Vagrant稍有了解,借这次机会好好学习一下.最终目标是希望能一个setup.sh把所有的脚本代码都黏在一块儿.launch一套完整的系统.
-这句话挺吸引人
-“New team members can be onboarded to new projects as easy as">
+<meta name="twitter:title" content="git practice - 当devel branch和release branch不能完全merge">
+<meta name="twitter:description" content="问题描述要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包">
     
     
         
@@ -194,19 +188,19 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            阅读笔记- 《Creating Development Environments with Vagrant》
+            git practice - 当devel branch和release branch不能完全merge
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Jun 02 2016 15:35:53 GMT+0800">
+    <time itemprop="datePublished" content="Fri Jun 17 2016 14:40:15 GMT+0800">
 	
-		    6月 02, 2016
+		    6月 17, 2016
     	
     </time>
     
         <span>发布在 </span>
         
-    <a class="category-link" href="/categories/读书笔记-技术类/">读书笔记-技术类</a>
+    <a class="category-link" href="/categories/DevOps/">DevOps</a>
 
 
     
@@ -215,18 +209,9 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h3><p>写了一些ansible,docker相关的代码,经常想本地调试一下,尤其希望能有一个标准的干净的环境能测试.<br>之前对Vagrant稍有了解,借这次机会好好学习一下.<br>最终目标是希望能一个setup.sh把所有的脚本代码都黏在一块儿.launch一套完整的系统.</p>
-<h3 id="这句话挺吸引人"><a href="#这句话挺吸引人" class="headerlink" title="这句话挺吸引人"></a>这句话挺吸引人</h3><blockquote>
-<p>“New team members can be onboarded to new projects as easy as git clone &amp;&amp; vagrant up”<br> Excerpt From: Michael Peacock. “Creating Development Environments with Vagrant - Second Edition.” iBooks. </p>
-</blockquote>
-<h3 id="阅读简单笔记"><a href="#阅读简单笔记" class="headerlink" title="阅读简单笔记"></a>阅读简单笔记</h3><ul>
-<li>install virtualbox</li>
-<li>install vagrant <a href="https://www.vagrantup.com/downloads.html" target="_blank" rel="external">https://www.vagrantup.com/downloads.html</a></li>
-<li>vagrant init –force hashicorp/precise64 生成vagrantfile</li>
-<li>vagrant up 把precise64launch起来,因为本地没有box文件,所以远程下载</li>
-<li><a href="https://atlas.hashicorp.com/boxes/search?utf8=✓&amp;sort=&amp;provider=virtualbox&amp;q=centos" target="_blank" rel="external">https://atlas.hashicorp.com/boxes/search?utf8=✓&amp;sort=&amp;provider=virtualbox&amp;q=centos</a> 这里可以找到自己需要的box</li>
-<li>我需要centos 7.1,所以按照此页面<a href="https://atlas.hashicorp.com/bento/boxes/centos-7.1" target="_blank" rel="external">https://atlas.hashicorp.com/bento/boxes/centos-7.1</a>, 执行 vagrant init bento/centos-7.1; vagrant up –provider parallels</li>
-</ul>
+            <h1 id="table-of-contents">目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-text">问题描述</span></a></li></ol>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包</p>
+<a id="more"></a>
 
             
         </div>
@@ -236,7 +221,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">标签</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Vagrant/">Vagrant</a> <a class="tag tag--primary tag--small t-link" href="/tags/reading-notes/">reading-notes</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/git/">git</a> <a class="tag tag--primary tag--small t-link" href="/tags/gitlab/">gitlab</a>
 
             </div>
         
@@ -245,7 +230,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/17/git-practice/index.html"  data-tooltip="git practice - 当devel branch和release branch不能完全merge">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -253,7 +238,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/02/reuse-hexo/index.html" data-tooltip="重拾hexo,git blog走起">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html" data-tooltip="阅读笔记- 《Creating Development Environments with Vagrant》">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -268,17 +253,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/17/git-practice/index.html">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/17/git-practice/index.html">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/17/git-practice/index.html">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -291,7 +276,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -302,8 +287,8 @@
 
         
             
-                <div id="ds-thread" class="ds-thread" data-thread-key="2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html"
-     data-title="阅读笔记- 《Creating Development Environments with Vagrant》" data-url="http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html">
+                <div id="ds-thread" class="ds-thread" data-thread-key="2016/06/17/git-practice/index.html"
+     data-title="git practice - 当devel branch和release branch不能完全merge" data-url="http://yoursite.com/2016/06/17/git-practice/index.html">
 </div>
 
             
@@ -327,7 +312,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/17/git-practice/index.html"  data-tooltip="git practice - 当devel branch和release branch不能完全merge">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -335,7 +320,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/02/reuse-hexo/index.html" data-tooltip="重拾hexo,git blog走起">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html" data-tooltip="阅读笔记- 《Creating Development Environments with Vagrant》">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -350,17 +335,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/17/git-practice/index.html">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/17/git-practice/index.html">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/17/git-practice/index.html">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -373,7 +358,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -386,17 +371,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/17/git-practice/index.html">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/17/git-practice/index.html">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/17/git-practice/index.html">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

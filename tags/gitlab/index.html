@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="达西的流水账">
-    <title>归档 - 达西的流水账</title>
+    <title>标签: gitlab - 达西的流水账</title>
     <meta name="author" content="Darcy Song">
     
     
@@ -16,7 +16,7 @@
     <meta name="description">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="达西的流水账">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/gitlab/index.html">
 <meta property="og:site_name" content="达西的流水账">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -186,26 +186,26 @@
 <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2015/07/02/vim-tips/index.html">
-                            vim养成计划
+                        <a class="link-unstyled" href="/2016/06/17/git-practice/index.html">
+                            git practice - 当devel branch和release branch不能完全merge
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu Jul 02 2015 20:54:08 GMT+0800">
+    <time itemprop="datePublished" content="Fri Jun 17 2016 14:40:15 GMT+0800">
 	
-		    7月 02, 2015
+		    6月 17, 2016
     	
     </time>
     
         <span>发布在 </span>
         
-    <a class="category-link" href="/categories/Tech-for-Fun/">Tech for Fun</a>
+    <a class="category-link" href="/categories/DevOps/">DevOps</a>
 
 
     
@@ -213,88 +213,14 @@
             </div>
             
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <blockquote>
-<p>There will be many temptations in this new world. But as long as you remain brave, truthful and unselfish, you will not fail.</p>
-<blockquote>
-<p>新的世界里会有许多诱惑，只要你一直勇敢、诚实、无私，你就不会失败。</p>
-</blockquote>
-<p>——《童话镇》</p>
-</blockquote>
-<h4 id="开篇"><a href="#开篇" class="headerlink" title="开篇"></a>开篇</h4><p>如果参加过各种编程比赛的同学，肯定对全键盘编程这个限定条件会有记忆。这个条件是不允许在编程时使用键盘以外的输入设备，比如触摸板和鼠标都是禁止的。<br>这个时候熟练vim的同学就会如鱼得水了，那大家肯定会反问，熟悉vim就是为了这个？当然不仅仅是！但是我们可以反过来想，比如code retreat这样影响比较广泛的编程活动，为什么会有这样的限定条件呢？肯定不是闲着蛋疼,那么就自己而言，我可以大概说说玩vim的好处。</p>
-<blockquote>
-<p>有兴趣的可以看看coderetreat关于no mouse的限定条件。<br><a href="http://coderetreat.org/facilitating/activity-catalog" target="_blank" rel="external">http://coderetreat.org/facilitating/activity-catalog</a></p>
-</blockquote>
-<ul>
-<li>Geek精神，emacs和vim不熟练一个都说不过去。</li>
-<li>本身自己是个Devops工程师，每天ssh在各种机器上干活，以前有一阵不用vim，但是用一个自我感觉良好的方法，所有的文本编辑在本地各种狂帅霸裤的现代编辑器上搞定，然后到远程机，vi -&gt;  9999999dd -&gt; Cmd +V -&gt; ZZ </li>
-<li>效率高，虽然学习曲线陡峭，但是越熟练越快，有些地方是现代编辑器无法比拟的，比如现代编辑器都是通过鼠标定位，鼠标键盘来回切换来工作，而vi一方面会省略掉这个RTT，另一方面一眼就能定位的一些位置用5k，6j, 3w, fk之类的跳转快捷很多。</li>
-</ul>
-<h4 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h4><p>完事皆有因，其实自己下决心用好vim还是因为一些触动，如前所述，2，3年以前，我很喜欢自己那套9999dd+ctrl v，那么运维的工作经常会share屏幕大家一起工作，我当时对自己这套做法还觉得不错。并且我并不是不会用，而是懒得用罢了。<br>有一日，和一个同事远程协作产品线上trouble shooting，看他用emacs无比娴熟，效率其高，真是无比羡慕，并且同时觉得自己很挫。<br>后来还下定决心也要把emaces练到他的程度，无奈试了一阵，觉得难度太大，放弃了，好在vi多少有些底子，起码正常编辑没问题，就专心把vim用好吧</p>
-<h4 id="养成"><a href="#养成" class="headerlink" title="养成"></a>养成</h4><p>如果让我推荐怎么练好vim，我觉得简单可以概括成一句话，随处都用vim。  </p>
-<ul>
-<li>比如我现在写这篇博客，虽然是在Idea编辑器里，但是用了vim的plugin，实际效果和vim没啥区别。  </li>
-<li>我也是evernote用户，但是不在客户端里写note，有个替代方案叫geeknote，然后打开终端就可以用vi写evernote，有兴趣可以试试： <a href="http://www.geeknote.me/" target="_blank" rel="external">http://www.geeknote.me/</a></li>
-<li>写邮件可以用Vmail或者mutt，<a href="https://linuxtoy.org/archives/vmail.html" target="_blank" rel="external">https://linuxtoy.org/archives/vmail.html</a></li>
-<li>其他文件，如果需要云存储的，可以直接到网盘目录去vi</li>
-</ul>
-<h4 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h4><ul>
-<li>首先丢掉上下左右键，移动词别忘了用w, b</li>
-<li>用Ctrl+c 替换Esc</li>
-<li>复杂选文件用:Sex</li>
-</ul>
-<h4 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h4><p>下面这个链接可真是够宅的。。。<br><a href="http://blog.jobbole.com/tag/vim/" target="_blank" rel="external">http://blog.jobbole.com/tag/vim/</a></p>
-<p>vim的各种cheatsheet<br><a href="http://pan.baidu.com/s/1sjE5bjR" target="_blank" rel="external">http://pan.baidu.com/s/1sjE5bjR</a></p>
-
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <!-- toc -->
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包</p>
                     
-                        
-                    
-                    
-                        <p>
-                            <a href="/2015/07/02/vim-tips/index.html#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2015/07/01/first/index.html">
-                            first
+                        <a href="/2016/06/17/git-practice/index.html" class="postShorten-excerpt_link link">
+                            阅读全文
                         </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Jul 01 2015 23:40:20 GMT+0800">
-	
-		    7月 01, 2015
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    
-                    
                         
-                    
-                    
-                        <p>
-                            <a href="/2015/07/01/first/index.html#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
                     
                 </div>
             
@@ -305,22 +231,12 @@
     <div class="pagination-bar">
     <ul class="pagination">
         
-        <li class="pagination-prev">
-            
-                <a class="btn btn--default btn--small" href="/ ">
-            
-                <i class="fa fa-angle-left text-base icon-mr"></i>
-                    <span>上一页</span>
-            </a>
-        </li>
         
-        
-        <li class="pagination-number">第 2 页 共 2 页</li>
+        <li class="pagination-number">第 1 页 共 1 页</li>
     </ul>
 </div>
 
 </section>
-
 
 
                 <footer id="footer" class="main-content-wrap">
