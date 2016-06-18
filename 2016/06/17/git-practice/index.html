@@ -13,16 +13,20 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="问题描述要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包">
+    <meta name="description" content="问题描述要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包.开发模式,有个dev的branch,所有的功能都往这里放,然后有个出release的branch,dev branch完成测试的就手动merge到release的branch.所以dev branch和release branch无法直接merge">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="git practice - 当devel branch和release branch不能完全merge">
 <meta property="og:url" content="http://yoursite.com/2016/06/17/git-practice/index.html">
 <meta property="og:site_name" content="达西的流水账">
-<meta property="og:description" content="问题描述要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包">
-<meta property="og:updated_time" content="2016-06-17T06:45:21.000Z">
+<meta property="og:description" content="问题描述要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包.开发模式,有个dev的branch,所有的功能都往这里放,然后有个出release的branch,dev branch完成测试的就手动merge到release的branch.所以dev branch和release branch无法直接merge">
+<meta property="og:image" content="http://7xk2xu.com1.z0.glb.clouddn.com/1.jpg">
+<meta property="og:image" content="http://7xk2xu.com1.z0.glb.clouddn.com/2.jpg">
+<meta property="og:image" content="http://7xk2xu.com1.z0.glb.clouddn.com/3.jpg">
+<meta property="og:updated_time" content="2016-06-18T06:42:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git practice - 当devel branch和release branch不能完全merge">
-<meta name="twitter:description" content="问题描述要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包">
+<meta name="twitter:description" content="问题描述要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包.开发模式,有个dev的branch,所有的功能都往这里放,然后有个出release的branch,dev branch完成测试的就手动merge到release的branch.所以dev branch和release branch无法直接merge">
+<meta name="twitter:image" content="http://7xk2xu.com1.z0.glb.clouddn.com/1.jpg">
     
     
         
@@ -209,9 +213,40 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h1 id="table-of-contents">目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-text">问题描述</span></a></li></ol>
-<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包</p>
+            <h1 id="table-of-contents">目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我们team的使用情况"><span class="toc-text">我们team的使用情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#借鉴ansible的项目的经验"><span class="toc-text">借鉴ansible的项目的经验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitlab里的实践"><span class="toc-text">gitlab里的实践</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#综述"><span class="toc-text">综述</span></a></li></ol>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包.<br>开发模式,有个dev的branch,所有的功能都往这里放,然后有个出release的branch,dev branch完成测试的就手动merge到release的branch.<br>所以dev branch和release branch无法直接merge</p>
 <a id="more"></a>
+<h2 id="我们team的使用情况"><a href="#我们team的使用情况" class="headerlink" title="我们team的使用情况"></a>我们team的使用情况</h2><p>我们team人比较少,5个人,所以比较好协调,用的是标准的gitlab flow, 如果需要做feature,就从master上新建一个branch,然后做feature,<br>feature的branch会做包测试,这个环节要求比较严格,必须测试通过,有了相应的task cases,然后才能提交merge request, code review, accept,merge 到master上.<br>所以merge完的基本就是可以进release的code. 也是得益于人比较少,所以可以在需要测试时协调一下,把自己的branch deploy上去进行测试.<br>并且真正release的版本只是commit指针落后一点的,指到master上的一个tag,所以相对简单很多.</p>
+<h2 id="借鉴ansible的项目的经验"><a href="#借鉴ansible的项目的经验" class="headerlink" title="借鉴ansible的项目的经验"></a>借鉴ansible的项目的经验</h2><p>因为ansible项目关注的比较多,<a href="https://github.com/ansible/ansible" target="_blank" rel="external">https://github.com/ansible/ansible</a><br>所以着重看了看. ansible和我们这个需要转的项目很类似, 重点关注devel branch和stable-2.1 branch:</p>
+<ul>
+<li><p>devel branch</p>
+<ul>
+<li>Patches should always be made against the devel branch.</li>
+<li>所以开发者贡献代码,基本是从这个branch Fork一下, 做完feature后提交pr, merge进来.</li>
+</ul>
+</li>
+<li><p>stable branch</p>
+<ul>
+<li>需要release的new feature或者一些bug fix, 会被cherry pick到stable上</li>
+</ul>
+</li>
+</ul>
+<p>ansible对提交pr也有要求,必须要先rebase一下,如果有多于的merge request,会被打回</p>
+<blockquote>
+<p>In order to keep the history clean and better audit incoming code, we will require resubmission of pull requests that contain merge commits. Use git pull –rebase (rather than git pull) and git rebase (rather than git merge). Also be sure to use topic branches to keep your additions on different branches, such that they won’t pick up stray commits later.</p>
+</blockquote>
+<h2 id="gitlab里的实践"><a href="#gitlab里的实践" class="headerlink" title="gitlab里的实践"></a>gitlab里的实践</h2><ul>
+<li><p>gitlab对cherrypick的支持非常流程,比如,当在devel上提交了merge request之后,当master同意了这个merge request并完成merge,可以直接在页面操作cherrypick,选择branch stable,<br>这时会生成一个新的branch,叫cherrypick-xxx,同时会有一个新的merge request,merge branch cherrypick-xxx 到stable</p>
+</li>
+<li><p>merge request之后就有cherry pick的button<br><img src="http://7xk2xu.com1.z0.glb.clouddn.com/1.jpg" alt="merge"></p>
+</li>
+<li><p>点击cherry pick之后,可以选择一个branch进行cherry pick<br><img src="http://7xk2xu.com1.z0.glb.clouddn.com/2.jpg" alt="cp"></p>
+</li>
+<li><p>cherry pick会生成一个新的branch,并且有相应的merge request<br><img src="http://7xk2xu.com1.z0.glb.clouddn.com/3.jpg" alt="cp-res"></p>
+</li>
+</ul>
+<p>同时gitlab也支持直接在页面选择一个commit进行cherry pick</p>
+<h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><p>对于server来说,因为一定要考虑向后兼容,所以从持续集成的角度来说,一个feature做好,并通过当前的regression测试,应该就可以上产品线.<br>但是这有个前提条件,需要完整的自动化regression测试,否则测试工作量太大.因此在不具备这个条件时,最简单的方式就是尽量少放代码到下一个release.</p>
 
             
         </div>
@@ -417,7 +452,7 @@
 </div>
 
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover1.jpg');"></div>
     </body>
     <!--SCRIPTS-->
 <script src="/assets/js/scrip-tu4ziscb5jrkjxubeugdgizktyuugflfq5jvgz4agzzmwifuq01g1lmq8giw.min.js"></script>
