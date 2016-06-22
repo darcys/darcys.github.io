@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-22T05:16:34.000Z</updated>
+  <updated>2016-06-22T06:15:59.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从零开始使用Atom</title>
+    <link href="http://yoursite.com/2016/06/22/atom-init/index.html"/>
+    <id>http://yoursite.com/2016/06/22/atom-init/index.html</id>
+    <published>2016-06-22T05:45:03.000Z</published>
+    <updated>2016-06-22T06:15:59.000Z</updated>
+    
+    <content type="html">&lt;!-- toc --&gt;
+&lt;h3 id=&quot;开始折腾atom&quot;&gt;&lt;a href=&quot;#开始折腾atom&quot; class=&quot;headerlink&quot; title=&quot;开始折腾atom&quot;&gt;&lt;/a&gt;开始折腾atom&lt;/h3&gt;&lt;p&gt;作为git粉,迟早还是要转到atom的,不如趁早(其实现在也不算早了)&lt;/p&gt;
+&lt;h2 id=&quot;download&quot;&gt;&lt;a href=&quot;#download&quot; class=&quot;headerlink&quot; title=&quot;download&quot;&gt;&lt;/a&gt;download&lt;/h2&gt;&lt;p&gt;没啥好说的,官网下载mac版,解压,拷贝到app下面&lt;/p&gt;
+&lt;h2 id=&quot;apm&quot;&gt;&lt;a href=&quot;#apm&quot; class=&quot;headerlink&quot; title=&quot;apm&quot;&gt;&lt;/a&gt;apm&lt;/h2&gt;&lt;p&gt;安装atom之后,就会自带个命令行工具apm,这个不能更赞了,很多事情就可以脚本化来做了.&lt;br&gt;apm - Atom Package Manager powered by &lt;a href=&quot;https://atom.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://atom.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;支持的命令列表&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;clean, config, dedupe, deinstall, delete, dev, develop, disable, docs,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    enable, erase, featured, home, i, init, install, link, linked, links, list,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ln, lns, login, ls, open, outdated, publish, rebuild, rebuild-module-cache,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    remove, rm, search, show, star, starred, stars, test, uninstall, unlink,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    unpublish, unstar, update, upgrade, view.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果想看某个命令的用法,run apm help command&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apm help dedupe                                                                                                         master &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Usage: apm dedupe [&amp;lt;package_name&amp;gt;...]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Reduce duplication in the node_modules folder in the current directory.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;This command is experimental.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;配置theme&quot;&gt;&lt;a href=&quot;#配置theme&quot; class=&quot;headerlink&quot; title=&quot;配置theme&quot;&gt;&lt;/a&gt;配置theme&lt;/h2&gt;&lt;p&gt;我还是喜欢light的主题,挑了个最火的:&lt;br&gt;&lt;a href=&quot;https://atom.io/themes/atom-material-ui&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://atom.io/themes/atom-material-ui&lt;/a&gt;&lt;br&gt;两个命令安装light theme&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apm install atom-material-ui&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apm install atom-material-syntax-light&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;然后进preferences里面配置一下&lt;/p&gt;
+&lt;h2 id=&quot;配置vim&quot;&gt;&lt;a href=&quot;#配置vim&quot; class=&quot;headerlink&quot; title=&quot;配置vim&quot;&gt;&lt;/a&gt;配置vim&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/vim-mode&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://atom.io/packages/vim-mode&lt;/a&gt;&lt;br&gt;和其他ide一样,也有vim的plugin&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apm install vim-mode&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;需要重启一下生效&lt;/p&gt;
+&lt;h2 id=&quot;安装其他需要的plugin&quot;&gt;&lt;a href=&quot;#安装其他需要的plugin&quot; class=&quot;headerlink&quot; title=&quot;安装其他需要的plugin&quot;&gt;&lt;/a&gt;安装其他需要的plugin&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://atom.io/packages&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://atom.io/packages&lt;/a&gt;&lt;br&gt;基本上在这里搜就可以了,非常有玩头&lt;/p&gt;
+&lt;h2 id=&quot;使用&quot;&gt;&lt;a href=&quot;#使用&quot; class=&quot;headerlink&quot; title=&quot;使用&quot;&gt;&lt;/a&gt;使用&lt;/h2&gt;&lt;p&gt;默认就支持python和yaml的语法高亮,我现在就写写script和ansible,暂时不把他弄太heavy了&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;!-- toc --&gt;
+&lt;h3 id=&quot;开始折腾atom&quot;&gt;&lt;a href=&quot;#开始折腾atom&quot; class=&quot;headerlink&quot; title=&quot;开始折腾atom&quot;&gt;&lt;/a&gt;开始折腾atom&lt;/h3&gt;&lt;p&gt;作为git粉,迟早还是要转到atom的,不如趁早(其实现在也不算早了)&lt;/p&gt;
+&lt;h2 id=&quot;download&quot;&gt;&lt;a href=&quot;#download&quot; class=&quot;headerlink&quot; title=&quot;download&quot;&gt;&lt;/a&gt;download&lt;/h2&gt;&lt;p&gt;没啥好说的,官网下载mac版,解压,拷贝到app下面&lt;/p&gt;
+&lt;h2 id=&quot;apm&quot;&gt;&lt;a href=&quot;#apm&quot; class=&quot;headerlink&quot; title=&quot;apm&quot;&gt;&lt;/a&gt;apm&lt;/h2&gt;&lt;p&gt;安装atom之后,就会自带个命令行工具apm,这个不能更赞了,很多事情就可以脚本化来做了.&lt;br&gt;apm - Atom Package Manager powered by &lt;a href=&quot;https://atom.io&quot;&gt;https://atom.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;支持的命令列表&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;clean, config, dedupe, deinstall, delete, dev, develop, disable, docs,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    enable, erase, featured, home, i, init, install, link, linked, links, list,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ln, lns, login, ls, open, outdated, publish, rebuild, rebuild-module-cache,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    remove, rm, search, show, star, starred, stars, test, uninstall, unlink,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    unpublish, unstar, update, upgrade, view.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果想看某个命令的用法,run apm help command&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apm help dedupe                                                                                                         master &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Usage: apm dedupe [&amp;lt;package_name&amp;gt;...]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Reduce duplication in the node_modules folder in the current directory.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;This command is experimental.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Tech for Fun" scheme="http://yoursite.com/categories/Tech-for-Fun/"/>
+    
+    
+      <category term="vim" scheme="http://yoursite.com/tags/vim/"/>
+    
+  </entry>
   
   <entry>
     <title>git practice - 当devel branch和release branch不能完全merge</title>
