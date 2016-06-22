@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://7xk2xu.com1.z0.glb.clouddn.com/1.jpg">
 <meta property="og:image" content="http://7xk2xu.com1.z0.glb.clouddn.com/2.jpg">
 <meta property="og:image" content="http://7xk2xu.com1.z0.glb.clouddn.com/3.jpg">
-<meta property="og:updated_time" content="2016-06-18T06:42:34.000Z">
+<meta property="og:updated_time" content="2016-06-22T05:16:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git practice - 当devel branch和release branch不能完全merge">
 <meta name="twitter:description" content="问题描述要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包.开发模式,有个dev的branch,所有的功能都往这里放,然后有个出release的branch,dev branch完成测试的就手动merge到release的branch.所以dev branch和release branch无法直接merge">
@@ -204,7 +204,7 @@
     
         <span>发布在 </span>
         
-    <a class="category-link" href="/categories/DevOps/">DevOps</a>
+    <a class="category-link" href="/categories/Devops/">Devops</a>
 
 
     
@@ -213,7 +213,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h1 id="table-of-contents">目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我们team的使用情况"><span class="toc-text">我们team的使用情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#借鉴ansible的项目的经验"><span class="toc-text">借鉴ansible的项目的经验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitlab里的实践"><span class="toc-text">gitlab里的实践</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#综述"><span class="toc-text">综述</span></a></li></ol>
+            <h1 id="table-of-contents">目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我们team的使用情况"><span class="toc-text">我们team的使用情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#借鉴ansible的项目的经验"><span class="toc-text">借鉴ansible的项目的经验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitlab里的实践"><span class="toc-text">gitlab里的实践</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Runtime-switches"><span class="toc-text">Runtime switches</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#综述"><span class="toc-text">综述</span></a></li></ol>
 <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>要从svn转一个项目到git,这个项目有近4年历史, team members大概有20多人, codebase很大,最终生成一个war包.<br>开发模式,有个dev的branch,所有的功能都往这里放,然后有个出release的branch,dev branch完成测试的就手动merge到release的branch.<br>所以dev branch和release branch无法直接merge</p>
 <a id="more"></a>
 <h2 id="我们team的使用情况"><a href="#我们team的使用情况" class="headerlink" title="我们team的使用情况"></a>我们team的使用情况</h2><p>我们team人比较少,5个人,所以比较好协调,用的是标准的gitlab flow, 如果需要做feature,就从master上新建一个branch,然后做feature,<br>feature的branch会做包测试,这个环节要求比较严格,必须测试通过,有了相应的task cases,然后才能提交merge request, code review, accept,merge 到master上.<br>所以merge完的基本就是可以进release的code. 也是得益于人比较少,所以可以在需要测试时协调一下,把自己的branch deploy上去进行测试.<br>并且真正release的版本只是commit指针落后一点的,指到master上的一个tag,所以相对简单很多.</p>
@@ -246,6 +246,7 @@
 </li>
 </ul>
 <p>同时gitlab也支持直接在页面选择一个commit进行cherry pick</p>
+<h2 id="Runtime-switches"><a href="#Runtime-switches" class="headerlink" title="Runtime switches"></a>Runtime switches</h2><p>如果想避免dev和stable差距过大的尴尬,还可以考虑引入Runtime switches,也就是说所有的代码都进到 main branch, 但不够稳定的, 不成熟的代码通过 runtime switch 来禁用.<br>下面还提到了为什么compile-time switch不好,如果有regression test的ta,又比较保守,可以考虑这种方式.设计得当可以解决大部分问题.<br><a href="https://medium.com/@aboodman/in-march-2011-i-drafted-an-article-explaining-how-the-team-responsible-for-google-chrome-ships-c479ba623a1b#.uriu5haz2" target="_blank" rel="external">https://medium.com/@aboodman/in-march-2011-i-drafted-an-article-explaining-how-the-team-responsible-for-google-chrome-ships-c479ba623a1b#.uriu5haz2</a></p>
 <h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><p>对于server来说,因为一定要考虑向后兼容,所以从持续集成的角度来说,一个feature做好,并通过当前的regression测试,应该就可以上产品线.<br>但是这有个前提条件,需要完整的自动化regression测试,否则测试工作量太大.因此在不具备这个条件时,最简单的方式就是尽量少放代码到下一个release.</p>
 
             
