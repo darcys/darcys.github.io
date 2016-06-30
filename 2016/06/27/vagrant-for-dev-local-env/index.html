@@ -5,8 +5,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="达西的流水账">
-    <title>vagrant-for-dev-local-env - 达西的流水账</title>
+    <meta name="generator" content="programmed_darcy">
+    <title>vagrant-for-dev-local-env - programmed_darcy</title>
     <meta name="author" content="Darcy Song">
     
     
@@ -19,11 +19,11 @@
 <meta property="og:type" content="blog">
 <meta property="og:title" content="vagrant-for-dev-local-env">
 <meta property="og:url" content="http://yoursite.com/2016/06/27/vagrant-for-dev-local-env/index.html">
-<meta property="og:site_name" content="达西的流水账">
+<meta property="og:site_name" content="programmed_darcy">
 <meta property="og:description" content="目标为了部署标准化，需要将本地开发环境，测试环境，生产环境统一。那么部署本地环境也需要自动化，从而保证标准。考虑跨平台的需求并且开发易于部署，所以选择vagrant作为虚拟机标准化的工具。
 安装并启动centos7安装virtual boxhttps://www.virtualbox.org/wiki/Downloads选择合适自己的平台下载并安装
 安装 vagranthttps://www.v">
-<meta property="og:updated_time" content="2016-06-28T06:01:53.000Z">
+<meta property="og:updated_time" content="2016-06-30T07:52:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vagrant-for-dev-local-env">
 <meta name="twitter:description" content="目标为了部署标准化，需要将本地开发环境，测试环境，生产环境统一。那么部署本地环境也需要自动化，从而保证标准。考虑跨平台的需求并且开发易于部署，所以选择vagrant作为虚拟机标准化的工具。
@@ -54,7 +54,7 @@
 <header id="header" data-behavior="3">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
-        <a class="header-title-link" href="/ ">达西的流水账</a>
+        <a class="header-title-link" href="/ ">programmed_darcy</a>
     </h1>
     
         
@@ -213,6 +213,7 @@
 <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>为了部署标准化，需要将本地开发环境，测试环境，生产环境统一。那么部署本地环境也需要自动化，从而保证标准。<br>考虑跨平台的需求并且开发易于部署，所以选择vagrant作为虚拟机标准化的工具。</p>
 <h2 id="安装并启动centos7"><a href="#安装并启动centos7" class="headerlink" title="安装并启动centos7"></a>安装并启动centos7</h2><h3 id="安装virtual-box"><a href="#安装virtual-box" class="headerlink" title="安装virtual box"></a>安装virtual box</h3><p><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">https://www.virtualbox.org/wiki/Downloads</a><br>选择合适自己的平台下载并安装</p>
 <h3 id="安装-vagrant"><a href="#安装-vagrant" class="headerlink" title="安装 vagrant"></a>安装 vagrant</h3><p><a href="https://www.vagrantup.com/downloads.html" target="_blank" rel="external">https://www.vagrantup.com/downloads.html</a><br>下载并安装</p>
+<a id="more"></a>
 <h3 id="想试试最基本的例子，可以过一遍getting-started"><a href="#想试试最基本的例子，可以过一遍getting-started" class="headerlink" title="想试试最基本的例子，可以过一遍getting started"></a>想试试最基本的例子，可以过一遍getting started</h3><p><a href="https://www.vagrantup.com/docs/getting-started/" target="_blank" rel="external">https://www.vagrantup.com/docs/getting-started/</a></p>
 <h3 id="找到需要的box"><a href="#找到需要的box" class="headerlink" title="找到需要的box"></a>找到需要的box</h3><p><a href="http://www.vagrantbox.es" target="_blank" rel="external">http://www.vagrantbox.es</a><br>这里可以搜到自己需要的的box</p>
 <h3 id="将centos7的box下载到本地并启动"><a href="#将centos7的box下载到本地并启动" class="headerlink" title="将centos7的box下载到本地并启动"></a>将centos7的box下载到本地并启动</h3><p>因为从repo下比较慢，所以可以用上面的地址找到box的link，通过下载工具下载<br>下载到本地之后，通过以下步骤launch起来centos7 box</p>
@@ -229,7 +230,6 @@
 <h2 id="ansible的集成"><a href="#ansible的集成" class="headerlink" title="ansible的集成"></a>ansible的集成</h2><p>vagrant与ansible的集成参见下面的链接<br><a href="https://www.vagrantup.com/docs/provisioning/ansible.html" target="_blank" rel="external">https://www.vagrantup.com/docs/provisioning/ansible.html</a></p>
 <p>不过看完这个介绍，因为我需要的环境是明确的，我觉得不如直接用script控制ansible的执行，这样开发也能更加理解ansible的执行过程</p>
 <p>ssh vagrant@127.0.0.1 -p 2222<br>password: vagrant</p>
-<a id="more"></a>
 
             
         </div>
