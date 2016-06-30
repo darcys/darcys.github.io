@@ -6,23 +6,29 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="达西的流水账">
-    <title>first - 达西的流水账</title>
+    <title>tcpdump-tips - 达西的流水账</title>
     <meta name="author" content="Darcy Song">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description">
+    <meta name="description" content="tcpdump是经常会用到的工具，但是每次用都不太记得命令，要去google，所以现在每次使用都把用法记录下来，方便后面查找使用方法抓某个端口tcpdump tcp port 22
+抓某个端口同时filter掉某台机器，不抓这台机器tcpdump tcp port 22 and not host 10.10.16.27
+保存为cap文件，每个分片文件大小100mtcpdump  tcp port">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="first">
-<meta property="og:url" content="http://yoursite.com/2015/07/01/first/index.html">
+<meta property="og:title" content="tcpdump-tips">
+<meta property="og:url" content="http://yoursite.com/2016/06/28/tcpdump-tips/index.html">
 <meta property="og:site_name" content="达西的流水账">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-06-27T05:25:58.000Z">
+<meta property="og:description" content="tcpdump是经常会用到的工具，但是每次用都不太记得命令，要去google，所以现在每次使用都把用法记录下来，方便后面查找使用方法抓某个端口tcpdump tcp port 22
+抓某个端口同时filter掉某台机器，不抓这台机器tcpdump tcp port 22 and not host 10.10.16.27
+保存为cap文件，每个分片文件大小100mtcpdump  tcp port">
+<meta property="og:updated_time" content="2016-06-28T05:54:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="first">
-<meta name="twitter:description">
+<meta name="twitter:title" content="tcpdump-tips">
+<meta name="twitter:description" content="tcpdump是经常会用到的工具，但是每次用都不太记得命令，要去google，所以现在每次使用都把用法记录下来，方便后面查找使用方法抓某个端口tcpdump tcp port 22
+抓某个端口同时filter掉某台机器，不抓这台机器tcpdump tcp port 22 and not host 10.10.16.27
+保存为cap文件，每个分片文件大小100mtcpdump  tcp port">
     
     
         
@@ -188,13 +194,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            first
+            tcpdump-tips
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Jul 01 2015 23:40:20 GMT+0800">
+    <time itemprop="datePublished" content="Tue Jun 28 2016 11:11:05 GMT+0800">
 	
-		    7月 01, 2015
+		    6月 28, 2016
     	
     </time>
     
@@ -203,7 +209,12 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            
+            <h1 id="table-of-contents">目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tcpdump是经常会用到的工具，但是每次用都不太记得命令，要去google，所以现在每次使用都把用法记录下来，方便后面查找"><span class="toc-text">tcpdump是经常会用到的工具，但是每次用都不太记得命令，要去google，所以现在每次使用都把用法记录下来，方便后面查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#抓某个端口"><span class="toc-text">抓某个端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抓某个端口同时filter掉某台机器，不抓这台机器"><span class="toc-text">抓某个端口同时filter掉某台机器，不抓这台机器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保存为cap文件，每个分片文件大小100m"><span class="toc-text">保存为cap文件，每个分片文件大小100m</span></a></li></ol></li></ol>
+<h2 id="tcpdump是经常会用到的工具，但是每次用都不太记得命令，要去google，所以现在每次使用都把用法记录下来，方便后面查找"><a href="#tcpdump是经常会用到的工具，但是每次用都不太记得命令，要去google，所以现在每次使用都把用法记录下来，方便后面查找" class="headerlink" title="tcpdump是经常会用到的工具，但是每次用都不太记得命令，要去google，所以现在每次使用都把用法记录下来，方便后面查找"></a>tcpdump是经常会用到的工具，但是每次用都不太记得命令，要去google，所以现在每次使用都把用法记录下来，方便后面查找</h2><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="抓某个端口"><a href="#抓某个端口" class="headerlink" title="抓某个端口"></a>抓某个端口</h3><p>tcpdump tcp port 22</p>
+<h3 id="抓某个端口同时filter掉某台机器，不抓这台机器"><a href="#抓某个端口同时filter掉某台机器，不抓这台机器" class="headerlink" title="抓某个端口同时filter掉某台机器，不抓这台机器"></a>抓某个端口同时filter掉某台机器，不抓这台机器</h3><p>tcpdump tcp port 22 and not host 10.10.16.27</p>
+<h3 id="保存为cap文件，每个分片文件大小100m"><a href="#保存为cap文件，每个分片文件大小100m" class="headerlink" title="保存为cap文件，每个分片文件大小100m"></a>保存为cap文件，每个分片文件大小100m</h3><p>tcpdump  tcp port 5222 -C 100m -w xmpp.cap</p>
+<a id="more"></a>
+
             
         </div>
     </div>
@@ -214,7 +225,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/07/02/vim-tips/index.html"  data-tooltip="vim养成计划">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -222,7 +233,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/27/vagrant-for-dev-local-env/index.html" data-tooltip="vagrant-for-dev-local-env">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -237,17 +248,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/07/01/first/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/28/tcpdump-tips/index.html">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/07/01/first/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/28/tcpdump-tips/index.html">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/07/01/first/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/28/tcpdump-tips/index.html">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -260,7 +271,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -271,8 +282,8 @@
 
         
             
-                <div id="ds-thread" class="ds-thread" data-thread-key="2015/07/01/first/index.html"
-     data-title="first" data-url="http://yoursite.com/2015/07/01/first/index.html">
+                <div id="ds-thread" class="ds-thread" data-thread-key="2016/06/28/tcpdump-tips/index.html"
+     data-title="tcpdump-tips" data-url="http://yoursite.com/2016/06/28/tcpdump-tips/index.html">
 </div>
 
             
@@ -296,7 +307,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/07/02/vim-tips/index.html"  data-tooltip="vim养成计划">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -304,7 +315,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/27/vagrant-for-dev-local-env/index.html" data-tooltip="vagrant-for-dev-local-env">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -319,17 +330,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/07/01/first/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/28/tcpdump-tips/index.html">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/07/01/first/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/28/tcpdump-tips/index.html">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/07/01/first/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/28/tcpdump-tips/index.html">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -342,7 +353,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -355,17 +366,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/07/01/first/index.html">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/28/tcpdump-tips/index.html">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/07/01/first/index.html">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/28/tcpdump-tips/index.html">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/07/01/first/index.html">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/28/tcpdump-tips/index.html">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
