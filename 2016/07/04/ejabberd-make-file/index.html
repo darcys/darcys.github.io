@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="programmed_darcy">
-    <title>ejabberd-make-file - programmed_darcy</title>
+    <title>ejabberd ver 16 makefile 代码阅读笔记 - programmed_darcy</title>
     <meta name="author" content="Darcy Song">
     
     
@@ -16,14 +16,14 @@
     <meta name="description" content="ejabberd 14.07 和 16.04 makefile的区别ejabberd 14.07 (3d3a4f7)https://github.com/processone/ejabberd/blob/3d3a4f75435ad353cf9a192b8ef23335be0a5b01/Makefile.in
 ejabberd 16.04 (639c2fb)https://github.com/p">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="ejabberd-make-file">
+<meta property="og:title" content="ejabberd ver 16 makefile 代码阅读笔记">
 <meta property="og:url" content="http://yoursite.com/2016/07/04/ejabberd-make-file/index.html">
 <meta property="og:site_name" content="programmed_darcy">
 <meta property="og:description" content="ejabberd 14.07 和 16.04 makefile的区别ejabberd 14.07 (3d3a4f7)https://github.com/processone/ejabberd/blob/3d3a4f75435ad353cf9a192b8ef23335be0a5b01/Makefile.in
 ejabberd 16.04 (639c2fb)https://github.com/p">
-<meta property="og:updated_time" content="2016-07-05T02:54:24.000Z">
+<meta property="og:updated_time" content="2016-07-05T06:01:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ejabberd-make-file">
+<meta name="twitter:title" content="ejabberd ver 16 makefile 代码阅读笔记">
 <meta name="twitter:description" content="ejabberd 14.07 和 16.04 makefile的区别ejabberd 14.07 (3d3a4f7)https://github.com/processone/ejabberd/blob/3d3a4f75435ad353cf9a192b8ef23335be0a5b01/Makefile.in
 ejabberd 16.04 (639c2fb)https://github.com/p">
     
@@ -213,7 +213,7 @@ ejabberd 16.04 (639c2fb)https://github.com/p">
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            ejabberd-make-file
+            ejabberd ver 16 makefile 代码阅读笔记
         </h1>
     
     <div class="post-meta">
@@ -283,7 +283,7 @@ ejabberd 16.04 (639c2fb)https://github.com/p">
 <h4 id="install-target介绍"><a href="#install-target介绍" class="headerlink" title="install target介绍"></a>install target介绍</h4><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">install: all copy-files</span><br><span class="line">	$(shell) zoom/patch.sh</span><br><span class="line">	<span class="comment">#</span></span><br><span class="line">	....</span><br></pre></td></tr></table></figure>
 <p>install的target需要先执行all和copy-files target，执行完这两个target之后再运行后面的命令<br>这里注意install有个前提条件是copy-files,这是这次新代码的入口</p>
 <h4 id="copy-files-target介绍"><a href="#copy-files-target介绍" class="headerlink" title="copy-files target介绍"></a>copy-files target介绍</h4><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ifeq ($(MAKECMDGOALS),copy-files-sub)</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">copy-files-sub2: $(call TO_DEST,$(DEPS_FILES) $(MAIN_FILES) priv/bin/captcha.sh priv/sql/lite.sql)</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">copy-files:</span><br><span class="line">	$(MAKE) copy-files-sub</span><br><span class="line"></span><br><span class="line">copy-files-sub: copy-files-sub2</span><br></pre></td></tr></table></figure>
-<p>copy-files的target执行了命令make copy-files-sub<br><div class="alert "><p>为什么这里单独再使用个make，是因为这段新代码有个开关<code>ifeq ($(MAKECMDGOALS),copy-files-sub)</code>,单独用一次make，MAKECMDGOALS是make的一个内置变量，代表make时指定的goal，如果不单独使用make copy-files-sub，这个变量就是install了，单独使用一次make，就能变成copy-files-sub，从而走到新逻辑。<br>那么为什么不能直接写成<code>ifeq ($(MAKECMDGOALS),install)</code>呢？我理解这些变量和语句是在make执行target前就确定好的，比如DEPS，make install也包含了make的过程，编译没结束，二进制文件都没有生成，是无法得到正确的文件列表的，放在这里重新执行一次make，会把所有变量表达式重新执行一遍，并且是在保证make之后</p>
+<p>copy-files的target执行了命令make copy-files-sub<br><div class="alert info"><p>为什么这里单独再使用个make，是因为这段新代码有个开关<code>ifeq ($(MAKECMDGOALS),copy-files-sub)</code>,单独用一次make，MAKECMDGOALS是make的一个内置变量，代表make时指定的goal，如果不单独使用make copy-files-sub，这个变量就是install了，单独使用一次make，就能变成copy-files-sub，从而走到新逻辑。<br>那么为什么不能直接写成<code>ifeq ($(MAKECMDGOALS),install)</code>呢？我理解这些变量和语句是在make执行target前就确定好的，比如DEPS，make install也包含了make的过程，编译没结束，二进制文件都没有生成，是无法得到正确的文件列表的，放在这里重新执行一次make，会把所有变量表达式重新执行一遍，并且是在保证make之后</p>
 </div><br>copy-files-sub target需要先执行copy-files-sub2<br>copy-files-sub2就是我们之前分析了一大堆的那句。。。。<br>copy-files-sub2: $(call TO_DEST,$(DEPS_FILES) $(MAIN_FILES) priv/bin/captcha.sh priv/sql/lite.sql)<br>这里我开始一直没想明白啥意思，以为copy-files-sub2就是运行后面这句话。绕错了。<br>再仔细想想make rule的定义，target… : prerequisites …<br>$(call TO_DEST,$(DEPS_FILES) $(MAIN_FILES) priv/bin/captcha.sh priv/sql/lite.sql) 是prerequisites<br>也就是说，需要把这句的返回结果当做prerequisites。那么运算完的结果就应该是类似下面这样的<br>copy-files-sub2： /lib/ejabberd-1.0.0/deps/jsx/ebin/jsx_consult.beam /lib/ejabberd-1.0.0/deps/jsx/ebin/xxx.beam /lib/ejabberd-1.0.0/deps/large/ebin/bbb.beam<br>一堆以文件路径命名的targets。</p>
 <p>那么这些targets在哪里定义的呢？</p>
 <h4 id="目标文件路径定义的targets哪里来的？"><a href="#目标文件路径定义的targets哪里来的？" class="headerlink" title="目标文件路径定义的targets哪里来的？"></a>目标文件路径定义的targets哪里来的？</h4><p>其实也是通过template<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">define COPY_template</span><br><span class="line">$(call TO_DEST,$(1)): $(1) $(call TO_DEST,$(dir $(1))) ; $$(INSTALL) -m 644 $(1) $(call TO_DEST,$(1))</span><br><span class="line">endef</span><br><span class="line"></span><br><span class="line">$(foreach file,$(DEPS_FILES_FILTERED) $(MAIN_FILES),$(eval $(call COPY_template,$(file))))</span><br><span class="line"></span><br><span class="line">$(sort $(call TO_DEST,$(MAIN_DIRS) $(DEPS_DIRS))):</span><br><span class="line">	$(INSTALL) -d $@</span><br><span class="line"></span><br><span class="line">$(call TO_DEST,deps/p1_pam/priv/bin/epam): $(LIBDIR)/%: deps/p1_pam/priv/bin/epam $(call TO_DEST,deps/p1_pam/priv/bin/)</span><br><span class="line">	$(INSTALL) -m 750 $(O_USER) $&lt; $@</span><br><span class="line"></span><br><span class="line">$(call TO_DEST,priv/sql/lite.sql): sql/lite.sql $(call TO_DEST,priv/sql)</span><br><span class="line">	$(INSTALL) -m 644 $&lt; $@</span><br><span class="line"></span><br><span class="line">$(call TO_DEST,priv/bin/captcha.sh): tools/captcha.sh $(call TO_DEST,priv/bin)</span><br><span class="line">	$(INSTALL) -m 750 $(O_USER) $&lt; $@</span><br></pre></td></tr></table></figure><br>首先看看template的使用<br>$(foreach file,$(DEPS_FILES_FILTERED) $(MAIN_FILES),$(eval $(call COPY_template,$(file))))<br>对每个文件都执行了$(eval $(call COPY_template,$(file))))，假设有这个文件deps/jsx/ebin/jsx_consult.beam</p>
@@ -298,6 +298,13 @@ ejabberd 16.04 (639c2fb)https://github.com/p">
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">标签</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/ejabberd/">ejabberd</a>
+
+            </div>
         
         <div class="post-actions-wrap">
     <nav>
@@ -362,7 +369,7 @@ ejabberd 16.04 (639c2fb)https://github.com/p">
         
             
                 <div id="ds-thread" class="ds-thread" data-thread-key="2016/07/04/ejabberd-make-file/index.html"
-     data-title="ejabberd-make-file" data-url="http://yoursite.com/2016/07/04/ejabberd-make-file/index.html">
+     data-title="ejabberd ver 16 makefile 代码阅读笔记" data-url="http://yoursite.com/2016/07/04/ejabberd-make-file/index.html">
 </div>
 
             
