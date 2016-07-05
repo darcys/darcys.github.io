@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="programmed_darcy">
+    <title>ejabberd-make-file - programmed_darcy</title>
+    <meta name="author" content="Darcy Song">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="ejabberd 14.07 和 16.04 makefile的区别ejabberd 14.07 (3d3a4f7)https://github.com/processone/ejabberd/blob/3d3a4f75435ad353cf9a192b8ef23335be0a5b01/Makefile.in
+ejabberd 16.04 (639c2fb)https://github.com/p">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="ejabberd-make-file">
+<meta property="og:url" content="http://yoursite.com/2016/07/04/ejabberd-make-file/index.html">
+<meta property="og:site_name" content="programmed_darcy">
+<meta property="og:description" content="ejabberd 14.07 和 16.04 makefile的区别ejabberd 14.07 (3d3a4f7)https://github.com/processone/ejabberd/blob/3d3a4f75435ad353cf9a192b8ef23335be0a5b01/Makefile.in
+ejabberd 16.04 (639c2fb)https://github.com/p">
+<meta property="og:updated_time" content="2016-07-05T02:54:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ejabberd-make-file">
+<meta name="twitter:description" content="ejabberd 14.07 和 16.04 makefile的区别ejabberd 14.07 (3d3a4f7)https://github.com/processone/ejabberd/blob/3d3a4f75435ad353cf9a192b8ef23335be0a5b01/Makefile.in
+ejabberd 16.04 (639c2fb)https://github.com/p">
+    
+    
+        
+    
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-27vrduj1jopliavvnzi7ibndpmbvg7lzo4a2uswrsi4m5vwauf2qi8s1v3or.min.css">
+    <!--STYLES END-->
+    
+    
+    <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?9072df043851504f329ae43d7ff0aff4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">programmed_darcy</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+<nav id="sidebar" data-behavior="3">
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/lockin-hiphop-daily"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-meh-o"></i>
+                    <span class="sidebar-button-desc">懵逼日记</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/why-i-choose-dance"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-meh-o"></i>
+                    <span class="sidebar-button-desc">求别看</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            ejabberd-make-file
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Mon Jul 04 2016 09:47:28 GMT+0800">
+	
+		    7月 04, 2016
+    	
+    </time>
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h1 id="table-of-contents">目录</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ejabberd-14-07-和-16-04-makefile的区别"><span class="toc-text">ejabberd 14.07 和 16.04 makefile的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ejabberd-14-07-3d3a4f7"><span class="toc-text">ejabberd 14.07 (3d3a4f7)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ejabberd-16-04-639c2fb"><span class="toc-text">ejabberd 16.04 (639c2fb)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区别最大的就是下面这一段"><span class="toc-text">区别最大的就是下面这一段</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最近的变更"><span class="toc-text">最近的变更</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#makefile-reference"><span class="toc-text">makefile reference</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于makefile的call"><span class="toc-text">关于makefile的call</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#这段新代码的入口"><span class="toc-text">这段新代码的入口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#理解-call-TO-DEST-DEPS-FILES-MAIN-FILES-priv-bin-captcha-sh-priv-sql-lite-sql"><span class="toc-text">理解 $(call TO_DEST,$(DEPS_FILES) $(MAIN_FILES) priv/bin/captcha.sh priv/sql/lite.sql)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#make的函数"><span class="toc-text">make的函数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#赋值表达式"><span class="toc-text">赋值表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#逻辑梳理"><span class="toc-text">逻辑梳理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TO-DEST-SINGLE"><span class="toc-text">TO_DEST_SINGLE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#VERSIONED-DEP，-make-template的定义"><span class="toc-text">VERSIONED_DEP， make template的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DEP-DEPS-FILES"><span class="toc-text">DEP, DEPS_FILES</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#make-install的执行流程"><span class="toc-text">make install的执行流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#makefile的rule"><span class="toc-text">makefile的rule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#install-target介绍"><span class="toc-text">install target介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#copy-files-target介绍"><span class="toc-text">copy-files target介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#目标文件路径定义的targets哪里来的？"><span class="toc-text">目标文件路径定义的targets哪里来的？</span></a></li></ol></li></ol>
+<h3 id="ejabberd-14-07-和-16-04-makefile的区别"><a href="#ejabberd-14-07-和-16-04-makefile的区别" class="headerlink" title="ejabberd 14.07 和 16.04 makefile的区别"></a>ejabberd 14.07 和 16.04 makefile的区别</h3><h4 id="ejabberd-14-07-3d3a4f7"><a href="#ejabberd-14-07-3d3a4f7" class="headerlink" title="ejabberd 14.07 (3d3a4f7)"></a>ejabberd 14.07 (3d3a4f7)</h4><p><a href="https://github.com/processone/ejabberd/blob/3d3a4f75435ad353cf9a192b8ef23335be0a5b01/Makefile.in" target="_blank" rel="external">https://github.com/processone/ejabberd/blob/3d3a4f75435ad353cf9a192b8ef23335be0a5b01/Makefile.in</a></p>
+<h4 id="ejabberd-16-04-639c2fb"><a href="#ejabberd-16-04-639c2fb" class="headerlink" title="ejabberd 16.04 (639c2fb)"></a>ejabberd 16.04 (639c2fb)</h4><p><a href="https://github.com/processone/ejabberd/blob/639c2fb6401391663206c0e4c946d1a699689ac7/Makefile.in" target="_blank" rel="external">https://github.com/processone/ejabberd/blob/639c2fb6401391663206c0e4c946d1a699689ac7/Makefile.in</a></p>
+<h4 id="区别最大的就是下面这一段"><a href="#区别最大的就是下面这一段" class="headerlink" title="区别最大的就是下面这一段"></a>区别最大的就是下面这一段</h4><p>下面这一段比之前的用法要复杂，正好可以借这个机会把makefile更好的理解一下<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">JOIN_PATHS=$(<span class="keyword">if</span> $(wordlist 2,1000,$(1)),$(firstword $(1))/$(call JOIN_PATHS,$(wordlist 2,1000,$(1))),$(1))</span><br><span class="line"></span><br><span class="line">VERSIONED_DEP=$(<span class="keyword">if</span> $(DEP_$(1)_VERSION),$(DEP_$(1)_VERSION),$(1))</span><br><span class="line"></span><br><span class="line">ELIXIR_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,$(word 2,$(1))) $(wordlist 5,1000,$(1))</span><br><span class="line">DEPS_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,$(word 2,$(1))) $(wordlist 3,1000,$(1))</span><br><span class="line">MAIN_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,ejabberd) $(1)</span><br><span class="line">TO_DEST_SINGLE=$(<span class="keyword">if</span> $(subst XdepsX,,X$(word 1,$(1))X),$(call MAIN_TO_DEST,$(1)),$(<span class="keyword">if</span> $(subst XlibX,,X$(word 3,$(1))X),$(call DEPS_TO_DEST,$(1)),$(call ELIXIR_TO_DEST,$(1))))</span><br><span class="line">TO_DEST=$(foreach path,$(1),$(call JOIN_PATHS,$(call TO_DEST_SINGLE,$(subst /, ,$(path)))))</span><br><span class="line"></span><br><span class="line">FILTER_DIRS=$(foreach path,$(1),$(<span class="keyword">if</span> $(wildcard $(path)/*),,$(path)))</span><br><span class="line">FILES_WILDCARD=$(call FILTER_DIRS,$(foreach w,$(1),$(wildcard $(w))))</span><br><span class="line"></span><br><span class="line">ifeq ($(MAKECMDGOALS),copy-files-sub)</span><br><span class="line"></span><br><span class="line">DEPS:=$(sort $(shell $(REBAR) list-deps|$(SED) <span class="_">-e</span> <span class="string">'/^=/d;s/ .*//'</span>))</span><br><span class="line"></span><br><span class="line">DEPS_FILES=$(call FILES_WILDCARD,$(foreach DEP,$(DEPS),deps/$(DEP)/ebin/*.beam deps/$(DEP)/ebin/*.app deps/$(DEP)/priv/* deps/$(DEP)/priv/lib/* deps/$(DEP)/priv/bin/* deps/$(DEP)/include/*.hrl deps/$(DEP)/lib/*/ebin/*.beam deps/$(DEP)/lib/*/ebin/*.app))</span><br><span class="line">DEPS_FILES_FILTERED=$(filter-out %/epam deps/elixir/ebin/elixir.app,$(DEPS_FILES))</span><br><span class="line">DEPS_DIRS=$(sort deps/ $(foreach DEP,$(DEPS),deps/$(DEP)/) $(dir $(DEPS_FILES)))</span><br><span class="line"></span><br><span class="line">MAIN_FILES=$(filter-out %/configure.beam,$(call FILES_WILDCARD,ebin/*.beam ebin/*.app priv/msgs/*.msg priv/lib/* include/*.hrl))</span><br><span class="line">MAIN_DIRS=$(sort $(dir $(MAIN_FILES)) priv/bin priv/sql)</span><br><span class="line"></span><br><span class="line">define DEP_VERSION_template</span><br><span class="line">DEP_$(1)_VERSION:=$(shell $(SED) <span class="_">-e</span> <span class="string">'/vsn/!d;s/.*, *"/$(1)-/;s/".*//'</span> $(2) 2&gt;/dev/null)</span><br><span class="line">endef</span><br><span class="line"></span><br><span class="line">$(foreach DEP,$(DEPS),$(<span class="built_in">eval</span> $(call DEP_VERSION_template,$(DEP),deps/$(DEP)/ebin/$(DEP).app)))</span><br><span class="line">$(<span class="built_in">eval</span> $(call DEP_VERSION_template,ejabberd,ebin/ejabberd.app))</span><br><span class="line"></span><br><span class="line">define COPY_template</span><br><span class="line">$(call TO_DEST,$(1)): $(1) $(call TO_DEST,$(dir $(1))) ; $$(INSTALL) -m 644 $(1) $(call TO_DEST,$(1))</span><br><span class="line">endef</span><br><span class="line"></span><br><span class="line">$(foreach file,$(DEPS_FILES_FILTERED) $(MAIN_FILES),$(<span class="built_in">eval</span> $(call COPY_template,$(file))))</span><br><span class="line"></span><br><span class="line">$(sort $(call TO_DEST,$(MAIN_DIRS) $(DEPS_DIRS))):</span><br><span class="line">	$(INSTALL) <span class="_">-d</span> <span class="variable">$@</span></span><br><span class="line"></span><br><span class="line">$(call TO_DEST,deps/p1_pam/priv/bin/epam): $(LIBDIR)/%: deps/p1_pam/priv/bin/epam $(call TO_DEST,deps/p1_pam/priv/bin/)</span><br><span class="line">	$(INSTALL) -m 750 $(O_USER) $&lt; <span class="variable">$@</span></span><br><span class="line"></span><br><span class="line">$(call TO_DEST,priv/sql/lite.sql): sql/lite.sql $(call TO_DEST,priv/sql)</span><br><span class="line">	$(INSTALL) -m 644 $&lt; <span class="variable">$@</span></span><br><span class="line"></span><br><span class="line">$(call TO_DEST,priv/bin/captcha.sh): tools/captcha.sh $(call TO_DEST,priv/bin)</span><br><span class="line">	$(INSTALL) -m 750 $(O_USER) $&lt; <span class="variable">$@</span></span><br><span class="line"></span><br><span class="line">copy-files-sub2: $(call TO_DEST,$(DEPS_FILES) $(MAIN_FILES) priv/bin/captcha.sh priv/sql/lite.sql)</span><br><span class="line"></span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">copy-files:</span><br><span class="line">	$(MAKE) copy-files-sub</span><br><span class="line"></span><br><span class="line">copy-files-sub: copy-files-sub2</span><br><span class="line"></span><br><span class="line">install: all copy-files</span><br></pre></td></tr></table></figure><br><a id="more"></a></p>
+<h3 id="最近的变更"><a href="#最近的变更" class="headerlink" title="最近的变更"></a>最近的变更</h3><p>其实之前改makefile都是照猫画虎，改动较小，就模仿一下能work就行了。<br>这次16.04的改动比较大，而且看不太懂，故此仔细理解一下。</p>
+<h4 id="makefile-reference"><a href="#makefile-reference" class="headerlink" title="makefile reference"></a>makefile reference</h4><p><a href="https://www.gnu.org/software/make/manual/" target="_blank" rel="external">https://www.gnu.org/software/make/manual/</a><br>首先过了一遍手册详细理解了一下makefile的语法</p>
+<h4 id="关于makefile的call"><a href="#关于makefile的call" class="headerlink" title="关于makefile的call"></a>关于makefile的call</h4><p><a href="https://www.gnu.org/software/make/manual/html_node/Call-Function.html" target="_blank" rel="external">https://www.gnu.org/software/make/manual/html_node/Call-Function.html</a><br>$(call variable,param,param,…)</p>
+<p>注意call函数后面第一个参数是个变量，后面是给变量再传递的函数。</p>
+<h3 id="这段新代码的入口"><a href="#这段新代码的入口" class="headerlink" title="这段新代码的入口"></a>这段新代码的入口</h3><p>我们看看入口：</p>
+<blockquote>
+<p>copy-files-sub: copy-files-sub2<br>copy-files-sub2: $(call TO_DEST,$(DEPS_FILES) $(MAIN_FILES) priv/bin/captcha.sh priv/sql/lite.sql)<br>copy-files-sub2是copy-files-sub的prerequisite<br>copy-files-sub2是个target，：后面的是prerequisites，我们在讨论make install的执行过程前，先理解一下后面这个call的语句。<br>这里是call了 TO_DEST这个变量，并将$(DEPS_FILES) $(MAIN_FILES) priv/bin/captcha.sh priv/sql/lite.sql 传给这个变量</p>
+</blockquote>
+<h3 id="理解-call-TO-DEST-DEPS-FILES-MAIN-FILES-priv-bin-captcha-sh-priv-sql-lite-sql"><a href="#理解-call-TO-DEST-DEPS-FILES-MAIN-FILES-priv-bin-captcha-sh-priv-sql-lite-sql" class="headerlink" title="理解 $(call TO_DEST,$(DEPS_FILES) $(MAIN_FILES) priv/bin/captcha.sh priv/sql/lite.sql)"></a>理解 $(call TO_DEST,$(DEPS_FILES) $(MAIN_FILES) priv/bin/captcha.sh priv/sql/lite.sql)</h3><p>再来看看TO_DEST的定义<br>TO_DEST=$(foreach path,$(1),$(call JOIN_PATHS,$(call TO_DEST_SINGLE,$(subst /, ,$(path)))))<br>这里$(1)就是$(DEPS_FILES) $(MAIN_FILES) priv/bin/captcha.sh priv/sql/lite.sql了</p>
+<h5 id="make的函数"><a href="#make的函数" class="headerlink" title="make的函数"></a>make的函数</h5><p>foreach是make的一个函数<br>make的function可以在这里找到<br><a href="https://www.gnu.org/software/make/manual/html_node/Functions.html#Functions" target="_blank" rel="external">https://www.gnu.org/software/make/manual/html_node/Functions.html#Functions</a></p>
+<p>foreach function的文档在这个链接<br><a href="https://www.gnu.org/software/make/manual/html_node/Foreach-Function.html#Foreach-Function" target="_blank" rel="external">https://www.gnu.org/software/make/manual/html_node/Foreach-Function.html#Foreach-Function</a></p>
+<h4 id="赋值表达式"><a href="#赋值表达式" class="headerlink" title="赋值表达式"></a>赋值表达式</h4><p>DEPS:=$(sort $(shell $(REBAR) list-deps|$(SED) -e ‘/^=/d;s/ .*//‘))<br>TO_DEST=$(foreach path,$(1),$(call JOIN_PATHS,$(call TO_DEST_SINGLE,$(subst /, ,$(path)))))</p>
+<p>注意这里DEPS使用:=赋值，而TO_DEST使用=赋值，具体有什么区别呢？<br>详细见这里<br><a href="https://www.gnu.org/software/make/manual/html_node/Setting.html#Setting" target="_blank" rel="external">https://www.gnu.org/software/make/manual/html_node/Setting.html#Setting</a></p>
+<blockquote>
+<p>Variables defined with ‘=’ are recursively expanded variables. Variables defined with ‘:=’ or ‘::=’ are simply expanded variables; these definitions can contain variable references which will be expanded before the definition is made. See The Two Flavors of Variables.</p>
+</blockquote>
+<p>recursively expanded variables: 简单的说，就是在定义时就确定好值了，和一般编程语言的用法一致<br>simply expanded variables： 只有在变量被使用时，才对这个变量里引用的其他变量取当前值。</p>
+<p>如果实在无法理解，可以本地创建makefile，执行一下试试<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cat makefile</span><br><span class="line">X = foo</span><br><span class="line">Y = $(X) bar</span><br><span class="line">X = notfoo</span><br><span class="line"></span><br><span class="line">all:</span><br><span class="line">	@<span class="built_in">echo</span> $(Y)</span><br><span class="line"> darcy /tmp  make        </span><br><span class="line">notfoo bar</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cat makefile</span><br><span class="line">X := foo</span><br><span class="line">Y := $(X) bar</span><br><span class="line">X := notfoo</span><br><span class="line"></span><br><span class="line">all:</span><br><span class="line">	@<span class="built_in">echo</span> $(Y)</span><br><span class="line"> darcy  /tmp  make        </span><br><span class="line">foo bar</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>不过这里DEPS用:=还真是没看出什么特别之处，可能是防止在make里会添加其他运算，而这里需要最终值吧</p>
+<h4 id="逻辑梳理"><a href="#逻辑梳理" class="headerlink" title="逻辑梳理"></a>逻辑梳理</h4><p>知道了大概的几个语法，我们来详细看看这段代码的作用</p>
+<p>TO_DEST=$(foreach path,$(1),$(call JOIN_PATHS,$(call TO_DEST_SINGLE,$(subst /, ,$(path)))))<br>$(foreach <code>&lt;var&gt;</code>,<code>&lt;list&gt;</code>,<code>&lt;text&gt;</code>)</p>
+<ul>
+<li>这里path是变量名，传递给后面的subst</li>
+<li>$(1) 是之前传入的paramlist: $(DEPS_FILES) $(MAIN_FILES) priv/bin/captcha.sh priv/sql/lite.sql priv/lib/zoom_cpu_stat.so</li>
+<li>text参数是另三个嵌套的表达式<br>– $(subst <code>&lt;from&gt;</code>,<code>&lt;to&gt;</code>,<code>&lt;text&gt;</code>), 把字符串<code>&lt;text&gt;</code> 中的 <code>&lt;from&gt;</code> 替换为 <code>&lt;to&gt;</code> $(subst /, ,$(path)) , priv/bin/captcha.sh 会变成 priv bin captcha<br>– call TO_DEST_SINGLE,$(subst /, ,$(path)) ,这里call了另一个TARGET TO_DEST_SINGLE，见下面介绍<br>– JOIN_PATHS=$(if $(wordlist 2,1000,$(1)),$(firstword $(1))/$(call JOIN_PATHS,$(wordlist 2,1000,$(1))),$(1))<br>如果$(wordlist 2,1000,$(1))为true，则执行$(firstword $(1))/$(call JOIN_PATHS,$(wordlist 2,1000,$(1))),否则返回$(1) #$(if <code>&lt;condition&gt;</code>,<code>&lt;then-part&gt;</code>,<code>&lt;else-part&gt;</code>)<br>@echo $(wordlist 1,3,aa bb cc dd) # aa bb cc</li>
+</ul>
+<p>if $(wordlist 2,1000,$(1)), 如果路径的深度大于1，比如priv bin，为true<br>后面是个递归调用，如果路径长度小于2，则直接返回，否则取路径第一个参数后面加个/<br>总之最终的效果就是把之前/替换成的空格，又换成了/. 为什么要这么写呢？感觉特别蠢，但是貌似暂时想不到特别好的办法，因为TO_DEST_SINGLE需要处理路径，比如替换路径名，但是word只支持空格分隔的字符串。</p>
+<h4 id="TO-DEST-SINGLE"><a href="#TO-DEST-SINGLE" class="headerlink" title="TO_DEST_SINGLE"></a>TO_DEST_SINGLE</h4><p>TO_DEST_SINGLE=$(if $(subst XdepsX,,X$(word 1,$(1))X),$(call MAIN_TO_DEST,$(1)),$(if $(subst XlibX,,X$(word 3,$(1))X),$(call DEPS_TO_DEST,$(1)),$(call ELIXIR_TO_DEST,$(1))))</p>
+<ul>
+<li>$(word 1,$(1)) #@echo $(word 1,aa bb cc dd) 会显示aa，返回第一个单词</li>
+<li>$(subst XdepsX,,X$(word 1,$(1))X)， 如果路径第一个单词是deps, call MAIN_TO_DEST, 否则执行$(if $(subst XlibX,,X$(word 3,$(1))X),$(call DEPS_TO_DEST,$(1)),$(call ELIXIR_TO_DEST,$(1)))</li>
+</ul>
+<p>现在看看true的逻辑：MAIN_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,ejabberd) $(1)</p>
+<ul>
+<li>VERSIONED<em>DEP=$(if $(DEP</em>$(1)<em>VERSION),$(DEP</em>$(1)_VERSION),$(1)) … 这是什么鬼东西？</li>
+<li>DEP_$(1)_VERSION:=$(shell $(SED) -e ‘/vsn/!d;s/.<em>, </em>“/$(1)-/;s/“.*//‘ $(2) 2&gt;/dev/null) …这里$(2)是啥  </li>
+</ul>
+<h4 id="VERSIONED-DEP，-make-template的定义"><a href="#VERSIONED-DEP，-make-template的定义" class="headerlink" title="VERSIONED_DEP， make template的定义"></a>VERSIONED_DEP， make template的定义</h4><p>下面解释一下VERSIONED_DEP, 代码里定义了一个template<br>define DEP_VERSION<em>template<br>DEP</em>$(1)_VERSION:=$(shell $(SED) -e ‘/vsn/!d;s/.<em>, </em>“/$(1)-/;s/“.<em>//‘ $(2) 2&gt;/dev/null)<br>endef<br>然后紧随其后是两个运算这个template的语句<br>$(foreach DEP,$(DEPS),$(eval $(call DEP_VERSION_template,$(DEP),deps/$(DEP)/ebin/$(DEP).app)))<br>$(eval $(call DEP_VERSION_template,ejabberd,ebin/ejabberd.app))<br>效果就是定义出类似<br>DEP_ejabberd_VERSION:=$(shell $(SED) -e ‘/vsn/!d;s/.</em>, <em>“/ejabberd-/;s/“.</em>//‘ ebin/ejabberd.app) 2&gt;/dev/null)<br>的变量，<br>执行一下<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gsed  <span class="_">-e</span> <span class="string">'/vsn/!d;s/.*, *"/ejabberd-/;s/".*//'</span> ebin/ejabberd.app                                                           upgrade </span><br><span class="line">ejabberd-1.0.0</span><br></pre></td></tr></table></figure><br>这段代码都是好理解，不过有些不理解的是，template的这些语句，是什么时候执行的呢？其实这些语句是定义在copy-files-sub2之前的，在执行copy-files-sub2时，会先执行掉，所以这些值都是有的</p>
+<h4 id="DEP-DEPS-FILES"><a href="#DEP-DEPS-FILES" class="headerlink" title="DEP, DEPS_FILES"></a>DEP, DEPS_FILES</h4><p>细说一下这里，$(1)的值是什么样的<br>首先看看入口的变量DEPS_FILES<br>DEPS_FILES=$(call FILES_WILDCARD,$(foreach DEP,$(DEPS),deps/$(DEP)/ebin/<em>.beam deps/$(DEP)/ebin/</em>.app deps/$(DEP)/priv/<em> deps/$(DEP)/priv/lib/</em> deps/$(DEP)/priv/bin/<em> deps/$(DEP)/include/</em>.hrl deps/$(DEP)/lib/<em>/ebin/</em>.beam deps/$(DEP)/lib/<em>/ebin/</em>.app))<br>foreach比较好理解，遍历DEPS，然后返回最后一堆路径给FILES_WILDCARD</p>
+<p>DEPS:=$(sort $(shell $(REBAR) list-deps|$(SED) -e ‘/^=/d;s/ .*//‘))<br>DEPS执行了一个shell，这里可以试着执行一下<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/Cellar/erlang/18.3/lib/erlang/bin/escript rebar list-deps|/usr/<span class="built_in">local</span>/bin/gsed <span class="_">-e</span> <span class="string">'/^=/d;s/ .*//'</span>                 upgra</span><br><span class="line">goldrush</span><br><span class="line">p1_utils</span><br><span class="line">p1_utils</span><br><span class="line">p1_utils</span><br><span class="line">p1_utils</span><br><span class="line">fast_tls</span><br><span class="line">p1_utils</span><br><span class="line">stun</span><br><span class="line">fast_tls</span><br><span class="line">p1_utils</span><br><span class="line">p1_utils</span><br><span class="line">proper</span><br><span class="line">covertool</span><br><span class="line">meck</span><br><span class="line">jsx</span><br><span class="line">eini</span><br><span class="line">lhttpc</span><br><span class="line">goldrush</span><br><span class="line">lager</span><br><span class="line">p1_utils</span><br><span class="line">cache_tab</span><br><span class="line">fast_tls</span><br><span class="line">stringprep</span><br><span class="line">fast_xml</span><br><span class="line">stun</span><br><span class="line">esip</span><br><span class="line">fast_yaml</span><br><span class="line">jiffy</span><br><span class="line">p1_oauth2</span><br><span class="line">p1_xmlrpc</span><br><span class="line">luerl</span><br><span class="line">proper</span><br><span class="line">covertool</span><br><span class="line">eini</span><br><span class="line">jsx</span><br><span class="line">lhttpc</span><br><span class="line">erlcloud</span><br><span class="line">eredis</span><br><span class="line">ezlib</span><br><span class="line">iconv</span><br></pre></td></tr></table></figure></p>
+<p>总而言之会拿到所有rebar里的依赖。<br>所以就会返回比如deps/erlcloud/ebin/<em>.beam deps/erlcloud/ebin/</em>.app deps/erlcloud/priv/* 等给FILES_WILDCARD</p>
+<p>FILES_WILDCARD=$(call FILTER_DIRS,$(foreach w,$(1),$(wildcard $(w))))<br>FILTER_DIRS=$(foreach path,$(1),$(if $(wildcard $(path)/<em>),,$(path)))<br>foreach这里会一个一个处理。比如deps/erlcloud/ebin/</em>.beam,会执行wildcard deps/erlcloud/ebin/*.beam, 得到wildcard对应的文件列表，然后通过FILTER_DIRS过滤掉目录。总之会拿到deps下面所需要的所有文件的列表</p>
+<p>一小段测试代码方便理解，需要执行的话可以放到ejabberd的根目录<br><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cat Makefile                                                                                                                upgrade </span><br><span class="line">DEPS=jsx lager</span><br><span class="line"></span><br><span class="line">DEPS_FILES=$(call FILES_WILDCARD,$(foreach DEP,$(DEPS),deps/$(DEP)/ebin/*.beam deps/$(DEP)/ebin/*.app deps/$(DEP)/priv/* deps/$(DEP)/priv/lib/* deps/$(DEP)/priv/bin/* deps/$(DEP)/include/*.hrl deps/$(DEP)/lib/*/ebin/*.beam deps/$(DEP)/lib/*/ebin/*.app))</span><br><span class="line">FILES_WILDCARD=$(call FILTER_DIRS,$(foreach w,$(1),$(wildcard $(w))))</span><br><span class="line">FILTER_DIRS=$(foreach path,$(1),$(<span class="keyword">if</span> $(wildcard $(path)/*),,$(path)))</span><br><span class="line"></span><br><span class="line">all:</span><br><span class="line">	@<span class="built_in">echo</span> $(DEPS_FILES)</span><br><span class="line"></span><br><span class="line">make的结果</span><br><span class="line">deps/jsx/ebin/jsx.beam deps/jsx/ebin/jsx_config.beam deps/jsx/ebin/jsx_consult.beam deps/jsx/ebin/jsx_decoder.beam deps/jsx/ebin/jsx_encoder.beam deps/jsx/ebin/jsx_parser.beam deps/jsx/ebin/jsx_to_json.beam deps/jsx/ebin/jsx_to_term.beam deps/jsx/ebin/jsx_verify.beam deps/jsx/ebin/jsx.app deps/lager/ebin/error_logger_lager_h.beam deps/lager/ebin/lager.beam deps/lager/ebin/lager_app.beam deps/lager/ebin/lager_backend_throttle.beam deps/lager/ebin/lager_common_<span class="built_in">test</span>_backend.beam deps/lager/ebin/lager_config.beam deps/lager/ebin/lager_console_backend.beam deps/lager/ebin/lager_crash_log.beam deps/lager/ebin/lager_default_formatter.beam deps/lager/ebin/lager_file_backend.beam deps/lager/ebin/lager_format.beam deps/lager/ebin/lager_handler_watcher.beam deps/lager/ebin/lager_handler_watcher_sup.beam deps/lager/ebin/lager_msg.beam deps/lager/ebin/lager_stdlib.beam deps/lager/ebin/lager_sup.beam deps/lager/ebin/lager_transform.beam deps/lager/ebin/lager_trunc_io.beam deps/lager/ebin/lager_util.beam deps/lager/ebin/lager.app deps/lager/priv/edoc.css deps/lager/include/lager.hrl</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>重新回到MAIN_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,ejabberd) $(1)，<br>$(1)就是处理后的 deps/jsx/ebin/jsx_consult.beam: deps jsx ebin jsx_consult.beam<br>所以MAIN_TO_DEST的结果就是 lib ejabberd-1.0.0 deps jsx ebin jsx_consult.beam, 这是最终的要copy到的target 路径</p>
+<p>所以TO_DEST就是最终所有文件的copy目的路径： 比如 /lib/ejabberd-1.0.0/deps/jsx/ebin/jsx_consult.beam /lib/ejabberd-1.0.0/deps/jsx/ebin/xxx.beam /lib/ejabberd-1.0.0/deps/large/ebin/bbb.beam</p>
+<h3 id="make-install的执行流程"><a href="#make-install的执行流程" class="headerlink" title="make install的执行流程"></a>make install的执行流程</h3><h4 id="makefile的rule"><a href="#makefile的rule" class="headerlink" title="makefile的rule"></a>makefile的rule</h4><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">target... : prerequisites ...</span><br><span class="line">          <span class="built_in">command</span></span><br><span class="line">          ...</span><br><span class="line">          ...</span><br></pre></td></tr></table></figure>
+<p>prerequisites在这个makefile里是指向别的target<br>command是具体的命令</p>
+<h4 id="install-target介绍"><a href="#install-target介绍" class="headerlink" title="install target介绍"></a>install target介绍</h4><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">install: all copy-files</span><br><span class="line">	$(shell) zoom/patch.sh</span><br><span class="line">	<span class="comment">#</span></span><br><span class="line">	....</span><br></pre></td></tr></table></figure>
+<p>install的target需要先执行all和copy-files target，执行完这两个target之后再运行后面的命令<br>这里注意install有个前提条件是copy-files,这是这次新代码的入口</p>
+<h4 id="copy-files-target介绍"><a href="#copy-files-target介绍" class="headerlink" title="copy-files target介绍"></a>copy-files target介绍</h4><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ifeq ($(MAKECMDGOALS),copy-files-sub)</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">copy-files-sub2: $(call TO_DEST,$(DEPS_FILES) $(MAIN_FILES) priv/bin/captcha.sh priv/sql/lite.sql)</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">copy-files:</span><br><span class="line">	$(MAKE) copy-files-sub</span><br><span class="line"></span><br><span class="line">copy-files-sub: copy-files-sub2</span><br></pre></td></tr></table></figure>
+<p>copy-files的target执行了命令make copy-files-sub<br><div class="alert "><p>为什么这里单独再使用个make，是因为这段新代码有个开关<code>ifeq ($(MAKECMDGOALS),copy-files-sub)</code>,单独用一次make，MAKECMDGOALS是make的一个内置变量，代表make时指定的goal，如果不单独使用make copy-files-sub，这个变量就是install了，单独使用一次make，就能变成copy-files-sub，从而走到新逻辑。<br>那么为什么不能直接写成<code>ifeq ($(MAKECMDGOALS),install)</code>呢？我理解这些变量和语句是在make执行target前就确定好的，比如DEPS，make install也包含了make的过程，编译没结束，二进制文件都没有生成，是无法得到正确的文件列表的，放在这里重新执行一次make，会把所有变量表达式重新执行一遍，并且是在保证make之后</p>
+</div><br>copy-files-sub target需要先执行copy-files-sub2<br>copy-files-sub2就是我们之前分析了一大堆的那句。。。。<br>copy-files-sub2: $(call TO_DEST,$(DEPS_FILES) $(MAIN_FILES) priv/bin/captcha.sh priv/sql/lite.sql)<br>这里我开始一直没想明白啥意思，以为copy-files-sub2就是运行后面这句话。绕错了。<br>再仔细想想make rule的定义，target… : prerequisites …<br>$(call TO_DEST,$(DEPS_FILES) $(MAIN_FILES) priv/bin/captcha.sh priv/sql/lite.sql) 是prerequisites<br>也就是说，需要把这句的返回结果当做prerequisites。那么运算完的结果就应该是类似下面这样的<br>copy-files-sub2： /lib/ejabberd-1.0.0/deps/jsx/ebin/jsx_consult.beam /lib/ejabberd-1.0.0/deps/jsx/ebin/xxx.beam /lib/ejabberd-1.0.0/deps/large/ebin/bbb.beam<br>一堆以文件路径命名的targets。</p>
+<p>那么这些targets在哪里定义的呢？</p>
+<h4 id="目标文件路径定义的targets哪里来的？"><a href="#目标文件路径定义的targets哪里来的？" class="headerlink" title="目标文件路径定义的targets哪里来的？"></a>目标文件路径定义的targets哪里来的？</h4><p>其实也是通过template<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">define COPY_template</span><br><span class="line">$(call TO_DEST,$(1)): $(1) $(call TO_DEST,$(dir $(1))) ; $$(INSTALL) -m 644 $(1) $(call TO_DEST,$(1))</span><br><span class="line">endef</span><br><span class="line"></span><br><span class="line">$(foreach file,$(DEPS_FILES_FILTERED) $(MAIN_FILES),$(eval $(call COPY_template,$(file))))</span><br><span class="line"></span><br><span class="line">$(sort $(call TO_DEST,$(MAIN_DIRS) $(DEPS_DIRS))):</span><br><span class="line">	$(INSTALL) -d $@</span><br><span class="line"></span><br><span class="line">$(call TO_DEST,deps/p1_pam/priv/bin/epam): $(LIBDIR)/%: deps/p1_pam/priv/bin/epam $(call TO_DEST,deps/p1_pam/priv/bin/)</span><br><span class="line">	$(INSTALL) -m 750 $(O_USER) $&lt; $@</span><br><span class="line"></span><br><span class="line">$(call TO_DEST,priv/sql/lite.sql): sql/lite.sql $(call TO_DEST,priv/sql)</span><br><span class="line">	$(INSTALL) -m 644 $&lt; $@</span><br><span class="line"></span><br><span class="line">$(call TO_DEST,priv/bin/captcha.sh): tools/captcha.sh $(call TO_DEST,priv/bin)</span><br><span class="line">	$(INSTALL) -m 750 $(O_USER) $&lt; $@</span><br></pre></td></tr></table></figure><br>首先看看template的使用<br>$(foreach file,$(DEPS_FILES_FILTERED) $(MAIN_FILES),$(eval $(call COPY_template,$(file))))<br>对每个文件都执行了$(eval $(call COPY_template,$(file))))，假设有这个文件deps/jsx/ebin/jsx_consult.beam</p>
+<p>根据template计算的结果就是<br>/lib/ejabberd-1.0.0/deps/jsx/ebin/jsx_consult.beam: deps/jsx/ebin/jsx_consult.beam /lib/ejabberd-1.0.0/deps/jsx/ebin/<br>    $(INSTALL) -m 644 deps/jsx/ebin/jsx_consult.beam /lib/ejabberd-1.0.0/deps/jsx/ebin/</p>
+<p>注意：</p>
+<ul>
+<li>这时target后面的是所需的文件，不是另外两个target了</li>
+<li>如果你要使用真实的“$”字符，那么你需要用“$$”来表示，所template里INSTALL是用的$$(INSTALL)</li>
+</ul>
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/28/tcpdump-tips/index.html" data-tooltip="tcpdump-tips">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/07/04/ejabberd-make-file/index.html">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/07/04/ejabberd-make-file/index.html">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/07/04/ejabberd-make-file/index.html">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#ds-thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            
+                <div id="ds-thread" class="ds-thread" data-thread-key="2016/07/04/ejabberd-make-file/index.html"
+     data-title="ejabberd-make-file" data-url="http://yoursite.com/2016/07/04/ejabberd-make-file/index.html">
+</div>
+
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2016 Darcy Song. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/28/tcpdump-tips/index.html" data-tooltip="tcpdump-tips">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/07/04/ejabberd-make-file/index.html">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/07/04/ejabberd-make-file/index.html">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/07/04/ejabberd-make-file/index.html">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#ds-thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/07/04/ejabberd-make-file/index.html">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/07/04/ejabberd-make-file/index.html">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/07/04/ejabberd-make-file/index.html">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        
+
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <h4 id="about-card-name">Darcy Song</h4>
+        
+            <h5 id="about-card-bio"><p>author.bio</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>author.job</p>
+
+            </h5>
+        
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover1.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/scrip-tu4ziscb5jrkjxubeugdgizktyuugflfq5jvgz4agzzmwifuq01g1lmq8giw.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:'darcys'};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+    
+
+
+
+</html>
