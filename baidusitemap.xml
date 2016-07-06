@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+    
+  <url>
+    <loc>http://blog.darcysong.com/2016/07/05/reading-notes-rework/index.html</loc>
+    <lastmod>2016-07-05T17:22:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>读书笔记 - 《Rework重来》</title>
+        <pubTime>2016-07-05T15:37:04.000Z</pubTime>
+        
+        <tag>读书笔记</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.darcysong.com/2016/07/04/ejabberd-make-file/index.html</loc>
+    <lastmod>2016-07-05T06:01:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>ejabberd ver 16 makefile 代码阅读笔记</title>
+        <pubTime>2016-07-04T01:47:28.000Z</pubTime>
+        
+        <tag>ejabberd</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://blog.darcysong.com/2016/06/27/vagrant-for-dev-local-env/index.html</loc>
+    <lastmod>2016-06-30T08:02:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>vagrant-for-dev-local-env</title>
+        <pubTime>2016-06-27T13:39:28.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.darcysong.com/2016/06/22/atom-init/index.html</loc>
+    <lastmod>2016-06-30T07:49:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>从零开始使用Atom</title>
+        <pubTime>2016-06-22T05:45:03.000Z</pubTime>
+        
+        <tag>vim</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tech for Fun" url="http://blog.darcysong.com/categories/Tech-for-Fun/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.darcysong.com/2016/06/28/tcpdump-tips/index.html</loc>
+    <lastmod>2016-06-28T05:54:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>tcpdump-tips</title>
+        <pubTime>2016-06-28T03:11:05.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.darcysong.com/2015/07/01/first/index.html</loc>
+    <lastmod>2016-06-27T05:25:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>first</title>
+        <pubTime>2015-07-01T15:40:20.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://blog.darcysong.com/2016/06/17/git-practice/index.html</loc>
+    <lastmod>2016-06-22T05:16:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>git practice - 当devel branch和release branch不能完全merge</title>
+        <pubTime>2016-06-17T06:40:15.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>gitlab</tag>
+         
+         
+           
+             
+              <breadCrumb title="Devops" url="http://blog.darcysong.com/categories/Devops/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://blog.darcysong.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html</loc>
+    <lastmod>2016-06-16T09:23:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>阅读笔记- 《Creating Development Environments with Vagrant》</title>
+        <pubTime>2016-06-02T07:35:53.000Z</pubTime>
+        
+        <tag>reading-notes</tag>
+         
+        <tag>Vagrant</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记-技术类" url="http://blog.darcysong.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%8A%80%E6%9C%AF%E7%B1%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
+    
+    
+    
+  <url>
+    <loc>http://blog.darcysong.com/2016/06/02/reuse-hexo/index.html</loc>
+    <lastmod>2016-06-02T07:28:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>重拾hexo,git blog走起</title>
+        <pubTime>2016-06-02T07:11:48.000Z</pubTime>
+        
+        <tag>blog</tag>
+         
+         
+           
+             
+              <breadCrumb title="个人" url="http://blog.darcysong.com/categories/%E4%B8%AA%E4%BA%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.darcysong.com/2016/06/02/Learning-Jenkins-2-0-pipeline/index.html</loc>
+    <lastmod>2016-06-02T07:00:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>Jenkins 2.0 pipeline 学习</title>
+        <pubTime>2016-06-02T06:47:53.000Z</pubTime>
+        
+        <tag>jenkins</tag>
+         
+         
+           
+             
+              <breadCrumb title="Devops" url="http://blog.darcysong.com/categories/Devops/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.darcysong.com/2015/09/12/trans-devops-landscope/index.html</loc>
+    <lastmod>2015-09-13T16:17:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>=翻译= 2015年devops一览-management层的竞争</title>
+        <pubTime>2015-09-12T09:16:19.000Z</pubTime>
+        
+        <tag>devops</tag>
+         
+         
+           
+             
+              <breadCrumb title="翻译" url="http://blog.darcysong.com/categories/%E7%BF%BB%E8%AF%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.darcysong.com/2015/09/12/powerline/index.html</loc>
+    <lastmod>2015-09-12T16:08:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>美化自己的命令行环境，增加漂亮的状态行，安装使用powerline</title>
+        <pubTime>2015-09-12T07:43:54.000Z</pubTime>
+        
+        <tag>coding for fun</tag>
+         
+        <tag>powerline</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tech for Fun" url="http://blog.darcysong.com/categories/Tech-for-Fun/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.darcysong.com/2015/09/11/powerline-font/index.html</loc>
+    <lastmod>2015-09-12T08:21:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>安装powerline的字体用于其他编程工具使用</title>
+        <pubTime>2015-09-11T07:26:16.000Z</pubTime>
+        
+        <tag>coding for fun</tag>
+         
+        <tag>powerline</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tech for Fun" url="http://blog.darcysong.com/categories/Tech-for-Fun/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.darcysong.com/2015/09/05/reading-notes-ansible-up-and-running/index.html</loc>
+    <lastmod>2015-09-12T08:18:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>阅读笔记- 《Ansible Up and Running》</title>
+        <pubTime>2015-09-05T02:53:04.000Z</pubTime>
+        
+        <tag>reading-notes</tag>
+         
+        <tag>ansible</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记-技术类" url="http://blog.darcysong.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%8A%80%E6%9C%AF%E7%B1%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.darcysong.com/2015/09/04/readbook-ansible-playbook-essentials/index.html</loc>
+    <lastmod>2015-09-12T08:17:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>阅读笔记- 《Ansible Playbook Essentials》</title>
+        <pubTime>2015-09-04T06:16:28.000Z</pubTime>
+        
+        <tag>reading-notes</tag>
+         
+        <tag>ansible</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记-技术类" url="http://blog.darcysong.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%8A%80%E6%9C%AF%E7%B1%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.darcysong.com/2015/07/02/vim-tips/index.html</loc>
+    <lastmod>2015-09-12T08:16:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>vim养成计划</title>
+        <pubTime>2015-07-02T12:54:08.000Z</pubTime>
+        
+        <tag>vim</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tech for Fun" url="http://blog.darcysong.com/categories/Tech-for-Fun/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.darcysong.com/2015/07/15/title-shanbay-firstbook/index.html</loc>
+    <lastmod>2015-07-15T05:33:15.000Z</lastmod>
+    <data>
+        <display>
+        <title>扇贝上背完第一本单词书</title>
+        <pubTime>2015-07-15T05:06:58.000Z</pubTime>
+        
+        <tag>shanbay</tag>
+         
+         
+           
+             
+              <breadCrumb title="english" url="http://blog.darcysong.com/categories/english/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>

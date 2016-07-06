@@ -4,9 +4,9 @@
   <subtitle>devops/dance</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://blog.darcysong.com/"/>
   <updated>2016-07-05T17:22:30.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://blog.darcysong.com/</id>
   
   <author>
     <name>Darcy Song</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>读书笔记 - 《Rework重来》</title>
-    <link href="http://yoursite.com/2016/07/05/reading-notes-rework/index.html"/>
-    <id>http://yoursite.com/2016/07/05/reading-notes-rework/index.html</id>
+    <link href="http://blog.darcysong.com/2016/07/05/reading-notes-rework/index.html"/>
+    <id>http://blog.darcysong.com/2016/07/05/reading-notes-rework/index.html</id>
     <published>2016-07-05T15:37:04.000Z</published>
     <updated>2016-07-05T17:22:30.000Z</updated>
     
@@ -83,14 +83,14 @@
     </summary>
     
     
-      <category term="读书笔记" scheme="http://yoursite.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://blog.darcysong.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>ejabberd ver 16 makefile 代码阅读笔记</title>
-    <link href="http://yoursite.com/2016/07/04/ejabberd-make-file/index.html"/>
-    <id>http://yoursite.com/2016/07/04/ejabberd-make-file/index.html</id>
+    <link href="http://blog.darcysong.com/2016/07/04/ejabberd-make-file/index.html"/>
+    <id>http://blog.darcysong.com/2016/07/04/ejabberd-make-file/index.html</id>
     <published>2016-07-04T01:47:28.000Z</published>
     <updated>2016-07-05T06:01:21.000Z</updated>
     
@@ -171,14 +171,14 @@
     </summary>
     
     
-      <category term="ejabberd" scheme="http://yoursite.com/tags/ejabberd/"/>
+      <category term="ejabberd" scheme="http://blog.darcysong.com/tags/ejabberd/"/>
     
   </entry>
   
   <entry>
     <title>tcpdump-tips</title>
-    <link href="http://yoursite.com/2016/06/28/tcpdump-tips/index.html"/>
-    <id>http://yoursite.com/2016/06/28/tcpdump-tips/index.html</id>
+    <link href="http://blog.darcysong.com/2016/06/28/tcpdump-tips/index.html"/>
+    <id>http://blog.darcysong.com/2016/06/28/tcpdump-tips/index.html</id>
     <published>2016-06-28T03:11:05.000Z</published>
     <updated>2016-06-28T05:54:47.000Z</updated>
     
@@ -203,8 +203,8 @@
   
   <entry>
     <title>vagrant-for-dev-local-env</title>
-    <link href="http://yoursite.com/2016/06/27/vagrant-for-dev-local-env/index.html"/>
-    <id>http://yoursite.com/2016/06/27/vagrant-for-dev-local-env/index.html</id>
+    <link href="http://blog.darcysong.com/2016/06/27/vagrant-for-dev-local-env/index.html"/>
+    <id>http://blog.darcysong.com/2016/06/27/vagrant-for-dev-local-env/index.html</id>
     <published>2016-06-27T13:39:28.000Z</published>
     <updated>2016-06-30T08:02:51.000Z</updated>
     
@@ -245,8 +245,8 @@
   
   <entry>
     <title>从零开始使用Atom</title>
-    <link href="http://yoursite.com/2016/06/22/atom-init/index.html"/>
-    <id>http://yoursite.com/2016/06/22/atom-init/index.html</id>
+    <link href="http://blog.darcysong.com/2016/06/22/atom-init/index.html"/>
+    <id>http://blog.darcysong.com/2016/06/22/atom-init/index.html</id>
     <published>2016-06-22T05:45:03.000Z</published>
     <updated>2016-06-30T07:49:06.000Z</updated>
     
@@ -294,17 +294,17 @@
     
     </summary>
     
-      <category term="Tech for Fun" scheme="http://yoursite.com/categories/Tech-for-Fun/"/>
+      <category term="Tech for Fun" scheme="http://blog.darcysong.com/categories/Tech-for-Fun/"/>
     
     
-      <category term="vim" scheme="http://yoursite.com/tags/vim/"/>
+      <category term="vim" scheme="http://blog.darcysong.com/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>git practice - 当devel branch和release branch不能完全merge</title>
-    <link href="http://yoursite.com/2016/06/17/git-practice/index.html"/>
-    <id>http://yoursite.com/2016/06/17/git-practice/index.html</id>
+    <link href="http://blog.darcysong.com/2016/06/17/git-practice/index.html"/>
+    <id>http://blog.darcysong.com/2016/06/17/git-practice/index.html</id>
     <published>2016-06-17T06:40:15.000Z</published>
     <updated>2016-06-22T05:16:34.000Z</updated>
     
@@ -352,19 +352,19 @@
     
     </summary>
     
-      <category term="Devops" scheme="http://yoursite.com/categories/Devops/"/>
+      <category term="Devops" scheme="http://blog.darcysong.com/categories/Devops/"/>
     
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+      <category term="git" scheme="http://blog.darcysong.com/tags/git/"/>
     
-      <category term="gitlab" scheme="http://yoursite.com/tags/gitlab/"/>
+      <category term="gitlab" scheme="http://blog.darcysong.com/tags/gitlab/"/>
     
   </entry>
   
   <entry>
     <title>阅读笔记- 《Creating Development Environments with Vagrant》</title>
-    <link href="http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html"/>
-    <id>http://yoursite.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html</id>
+    <link href="http://blog.darcysong.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html"/>
+    <id>http://blog.darcysong.com/2016/06/02/reading-notes-Creating-Development-Environments-with-Vagrant/index.html</id>
     <published>2016-06-02T07:35:53.000Z</published>
     <updated>2016-06-16T09:23:47.000Z</updated>
     
@@ -388,19 +388,19 @@
     
     </summary>
     
-      <category term="读书笔记-技术类" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%8A%80%E6%9C%AF%E7%B1%BB/"/>
+      <category term="读书笔记-技术类" scheme="http://blog.darcysong.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%8A%80%E6%9C%AF%E7%B1%BB/"/>
     
     
-      <category term="reading-notes" scheme="http://yoursite.com/tags/reading-notes/"/>
+      <category term="reading-notes" scheme="http://blog.darcysong.com/tags/reading-notes/"/>
     
-      <category term="Vagrant" scheme="http://yoursite.com/tags/Vagrant/"/>
+      <category term="Vagrant" scheme="http://blog.darcysong.com/tags/Vagrant/"/>
     
   </entry>
   
   <entry>
     <title>重拾hexo,git blog走起</title>
-    <link href="http://yoursite.com/2016/06/02/reuse-hexo/index.html"/>
-    <id>http://yoursite.com/2016/06/02/reuse-hexo/index.html</id>
+    <link href="http://blog.darcysong.com/2016/06/02/reuse-hexo/index.html"/>
+    <id>http://blog.darcysong.com/2016/06/02/reuse-hexo/index.html</id>
     <published>2016-06-02T07:11:48.000Z</published>
     <updated>2016-06-02T07:28:51.000Z</updated>
     
@@ -422,17 +422,17 @@
     
     </summary>
     
-      <category term="个人" scheme="http://yoursite.com/categories/%E4%B8%AA%E4%BA%BA/"/>
+      <category term="个人" scheme="http://blog.darcysong.com/categories/%E4%B8%AA%E4%BA%BA/"/>
     
     
-      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+      <category term="blog" scheme="http://blog.darcysong.com/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>Jenkins 2.0 pipeline 学习</title>
-    <link href="http://yoursite.com/2016/06/02/Learning-Jenkins-2-0-pipeline/index.html"/>
-    <id>http://yoursite.com/2016/06/02/Learning-Jenkins-2-0-pipeline/index.html</id>
+    <link href="http://blog.darcysong.com/2016/06/02/Learning-Jenkins-2-0-pipeline/index.html"/>
+    <id>http://blog.darcysong.com/2016/06/02/Learning-Jenkins-2-0-pipeline/index.html</id>
     <published>2016-06-02T06:47:53.000Z</published>
     <updated>2016-06-02T07:00:58.000Z</updated>
     
@@ -446,17 +446,17 @@
     
     </summary>
     
-      <category term="Devops" scheme="http://yoursite.com/categories/Devops/"/>
+      <category term="Devops" scheme="http://blog.darcysong.com/categories/Devops/"/>
     
     
-      <category term="jenkins" scheme="http://yoursite.com/tags/jenkins/"/>
+      <category term="jenkins" scheme="http://blog.darcysong.com/tags/jenkins/"/>
     
   </entry>
   
   <entry>
     <title>=翻译= 2015年devops一览-management层的竞争</title>
-    <link href="http://yoursite.com/2015/09/12/trans-devops-landscope/index.html"/>
-    <id>http://yoursite.com/2015/09/12/trans-devops-landscope/index.html</id>
+    <link href="http://blog.darcysong.com/2015/09/12/trans-devops-landscope/index.html"/>
+    <id>http://blog.darcysong.com/2015/09/12/trans-devops-landscope/index.html</id>
     <published>2015-09-12T09:16:19.000Z</published>
     <updated>2015-09-13T16:17:42.000Z</updated>
     
@@ -638,17 +638,17 @@
     
     </summary>
     
-      <category term="翻译" scheme="http://yoursite.com/categories/%E7%BF%BB%E8%AF%91/"/>
+      <category term="翻译" scheme="http://blog.darcysong.com/categories/%E7%BF%BB%E8%AF%91/"/>
     
     
-      <category term="devops" scheme="http://yoursite.com/tags/devops/"/>
+      <category term="devops" scheme="http://blog.darcysong.com/tags/devops/"/>
     
   </entry>
   
   <entry>
     <title>美化自己的命令行环境，增加漂亮的状态行，安装使用powerline</title>
-    <link href="http://yoursite.com/2015/09/12/powerline/index.html"/>
-    <id>http://yoursite.com/2015/09/12/powerline/index.html</id>
+    <link href="http://blog.darcysong.com/2015/09/12/powerline/index.html"/>
+    <id>http://blog.darcysong.com/2015/09/12/powerline/index.html</id>
     <published>2015-09-12T07:43:54.000Z</published>
     <updated>2015-09-12T16:08:20.000Z</updated>
     
@@ -681,19 +681,19 @@
     
     </summary>
     
-      <category term="Tech for Fun" scheme="http://yoursite.com/categories/Tech-for-Fun/"/>
+      <category term="Tech for Fun" scheme="http://blog.darcysong.com/categories/Tech-for-Fun/"/>
     
     
-      <category term="coding for fun" scheme="http://yoursite.com/tags/coding-for-fun/"/>
+      <category term="coding for fun" scheme="http://blog.darcysong.com/tags/coding-for-fun/"/>
     
-      <category term="powerline" scheme="http://yoursite.com/tags/powerline/"/>
+      <category term="powerline" scheme="http://blog.darcysong.com/tags/powerline/"/>
     
   </entry>
   
   <entry>
     <title>安装powerline的字体用于其他编程工具使用</title>
-    <link href="http://yoursite.com/2015/09/11/powerline-font/index.html"/>
-    <id>http://yoursite.com/2015/09/11/powerline-font/index.html</id>
+    <link href="http://blog.darcysong.com/2015/09/11/powerline-font/index.html"/>
+    <id>http://blog.darcysong.com/2015/09/11/powerline-font/index.html</id>
     <published>2015-09-11T07:26:16.000Z</published>
     <updated>2015-09-12T08:21:03.000Z</updated>
     
@@ -713,19 +713,19 @@
     
     </summary>
     
-      <category term="Tech for Fun" scheme="http://yoursite.com/categories/Tech-for-Fun/"/>
+      <category term="Tech for Fun" scheme="http://blog.darcysong.com/categories/Tech-for-Fun/"/>
     
     
-      <category term="coding for fun" scheme="http://yoursite.com/tags/coding-for-fun/"/>
+      <category term="coding for fun" scheme="http://blog.darcysong.com/tags/coding-for-fun/"/>
     
-      <category term="powerline" scheme="http://yoursite.com/tags/powerline/"/>
+      <category term="powerline" scheme="http://blog.darcysong.com/tags/powerline/"/>
     
   </entry>
   
   <entry>
     <title>阅读笔记- 《Ansible Up and Running》</title>
-    <link href="http://yoursite.com/2015/09/05/reading-notes-ansible-up-and-running/index.html"/>
-    <id>http://yoursite.com/2015/09/05/reading-notes-ansible-up-and-running/index.html</id>
+    <link href="http://blog.darcysong.com/2015/09/05/reading-notes-ansible-up-and-running/index.html"/>
+    <id>http://blog.darcysong.com/2015/09/05/reading-notes-ansible-up-and-running/index.html</id>
     <published>2015-09-05T02:53:04.000Z</published>
     <updated>2015-09-12T08:18:47.000Z</updated>
     
@@ -746,19 +746,19 @@
     
     </summary>
     
-      <category term="读书笔记-技术类" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%8A%80%E6%9C%AF%E7%B1%BB/"/>
+      <category term="读书笔记-技术类" scheme="http://blog.darcysong.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%8A%80%E6%9C%AF%E7%B1%BB/"/>
     
     
-      <category term="reading-notes" scheme="http://yoursite.com/tags/reading-notes/"/>
+      <category term="reading-notes" scheme="http://blog.darcysong.com/tags/reading-notes/"/>
     
-      <category term="ansible" scheme="http://yoursite.com/tags/ansible/"/>
+      <category term="ansible" scheme="http://blog.darcysong.com/tags/ansible/"/>
     
   </entry>
   
   <entry>
     <title>阅读笔记- 《Ansible Playbook Essentials》</title>
-    <link href="http://yoursite.com/2015/09/04/readbook-ansible-playbook-essentials/index.html"/>
-    <id>http://yoursite.com/2015/09/04/readbook-ansible-playbook-essentials/index.html</id>
+    <link href="http://blog.darcysong.com/2015/09/04/readbook-ansible-playbook-essentials/index.html"/>
+    <id>http://blog.darcysong.com/2015/09/04/readbook-ansible-playbook-essentials/index.html</id>
     <published>2015-09-04T06:16:28.000Z</published>
     <updated>2015-09-12T08:17:24.000Z</updated>
     
@@ -793,19 +793,19 @@
     
     </summary>
     
-      <category term="读书笔记-技术类" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%8A%80%E6%9C%AF%E7%B1%BB/"/>
+      <category term="读书笔记-技术类" scheme="http://blog.darcysong.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E6%8A%80%E6%9C%AF%E7%B1%BB/"/>
     
     
-      <category term="reading-notes" scheme="http://yoursite.com/tags/reading-notes/"/>
+      <category term="reading-notes" scheme="http://blog.darcysong.com/tags/reading-notes/"/>
     
-      <category term="ansible" scheme="http://yoursite.com/tags/ansible/"/>
+      <category term="ansible" scheme="http://blog.darcysong.com/tags/ansible/"/>
     
   </entry>
   
   <entry>
     <title>扇贝上背完第一本单词书</title>
-    <link href="http://yoursite.com/2015/07/15/title-shanbay-firstbook/index.html"/>
-    <id>http://yoursite.com/2015/07/15/title-shanbay-firstbook/index.html</id>
+    <link href="http://blog.darcysong.com/2015/07/15/title-shanbay-firstbook/index.html"/>
+    <id>http://blog.darcysong.com/2015/07/15/title-shanbay-firstbook/index.html</id>
     <published>2015-07-15T05:06:58.000Z</published>
     <updated>2015-07-15T05:33:15.000Z</updated>
     
@@ -826,17 +826,17 @@
     
     </summary>
     
-      <category term="english" scheme="http://yoursite.com/categories/english/"/>
+      <category term="english" scheme="http://blog.darcysong.com/categories/english/"/>
     
     
-      <category term="shanbay" scheme="http://yoursite.com/tags/shanbay/"/>
+      <category term="shanbay" scheme="http://blog.darcysong.com/tags/shanbay/"/>
     
   </entry>
   
   <entry>
     <title>vim养成计划</title>
-    <link href="http://yoursite.com/2015/07/02/vim-tips/index.html"/>
-    <id>http://yoursite.com/2015/07/02/vim-tips/index.html</id>
+    <link href="http://blog.darcysong.com/2015/07/02/vim-tips/index.html"/>
+    <id>http://blog.darcysong.com/2015/07/02/vim-tips/index.html</id>
     <published>2015-07-02T12:54:08.000Z</published>
     <updated>2015-09-12T08:16:43.000Z</updated>
     
@@ -880,17 +880,17 @@
     
     </summary>
     
-      <category term="Tech for Fun" scheme="http://yoursite.com/categories/Tech-for-Fun/"/>
+      <category term="Tech for Fun" scheme="http://blog.darcysong.com/categories/Tech-for-Fun/"/>
     
     
-      <category term="vim" scheme="http://yoursite.com/tags/vim/"/>
+      <category term="vim" scheme="http://blog.darcysong.com/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>first</title>
-    <link href="http://yoursite.com/2015/07/01/first/index.html"/>
-    <id>http://yoursite.com/2015/07/01/first/index.html</id>
+    <link href="http://blog.darcysong.com/2015/07/01/first/index.html"/>
+    <id>http://blog.darcysong.com/2015/07/01/first/index.html</id>
     <published>2015-07-01T15:40:20.000Z</published>
     <updated>2016-06-27T05:25:58.000Z</updated>
     
