@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.darcysong.com/thinking-of-solo/index.html</loc>
+    
+    <lastmod>2016-11-23T03:10:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.darcysong.com/2016/07/18/using-nutcracker-twemproxy-to-proxy-redis/index.html</loc>
+    
+    <lastmod>2016-07-18T09:24:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.darcysong.com/2016/07/14/learning-docker-swarm/index.html</loc>
+    
+    <lastmod>2016-07-14T05:27:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.darcysong.com/2016/06/22/atom-init/index.html</loc>
+    
+    <lastmod>2016-07-12T07:59:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.darcysong.com/baidu_verify_WmGG7jBcII.html</loc>
     
     <lastmod>2016-07-06T01:43:06.000Z</lastmod>
@@ -33,13 +61,6 @@
     <loc>http://blog.darcysong.com/2016/06/27/vagrant-for-dev-local-env/index.html</loc>
     
     <lastmod>2016-06-30T08:02:51.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.darcysong.com/2016/06/22/atom-init/index.html</loc>
-    
-    <lastmod>2016-06-30T07:49:06.000Z</lastmod>
     
   </url>
   

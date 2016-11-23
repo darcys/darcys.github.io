@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.darcysong.com/"/>
-  <updated>2016-07-05T17:22:30.000Z</updated>
+  <updated>2016-07-18T09:24:18.000Z</updated>
   <id>http://blog.darcysong.com/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>using-nutcracker-twemproxy-to-proxy-redis</title>
+    <link href="http://blog.darcysong.com/2016/07/18/using-nutcracker-twemproxy-to-proxy-redis/index.html"/>
+    <id>http://blog.darcysong.com/2016/07/18/using-nutcracker-twemproxy-to-proxy-redis/index.html</id>
+    <published>2016-07-18T09:21:53.000Z</published>
+    <updated>2016-07-18T09:24:18.000Z</updated>
+    
+    <content type="html">&lt;!-- toc --&gt;
+&lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h2&gt;&lt;p&gt;在aws使用elastic cache时，redis是在VPC里，只有private IP&lt;br&gt;如果想本地测试，就比较麻烦，所以想通过proxy，把redis service 暴露出来,&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;!-- toc --&gt;
+&lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h2&gt;&lt;p&gt;在aws使用elastic cache时，redis是在VPC里，只有private IP&lt;br&gt;如果想本地测试，就比较麻烦，所以想通过proxy，把redis service 暴露出来,&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>learning-docker-swarm</title>
+    <link href="http://blog.darcysong.com/2016/07/14/learning-docker-swarm/index.html"/>
+    <id>http://blog.darcysong.com/2016/07/14/learning-docker-swarm/index.html</id>
+    <published>2016-07-14T02:54:17.000Z</published>
+    <updated>2016-07-14T05:27:56.000Z</updated>
+    
+    <content type="html">&lt;!-- toc --&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;## &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;!-- toc --&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>读书笔记 - 《Rework重来》</title>
@@ -248,7 +290,7 @@
     <link href="http://blog.darcysong.com/2016/06/22/atom-init/index.html"/>
     <id>http://blog.darcysong.com/2016/06/22/atom-init/index.html</id>
     <published>2016-06-22T05:45:03.000Z</published>
-    <updated>2016-06-30T07:49:06.000Z</updated>
+    <updated>2016-07-12T07:59:25.000Z</updated>
     
     <content type="html">&lt;!-- toc --&gt;
 &lt;h3 id=&quot;开始折腾atom&quot;&gt;&lt;a href=&quot;#开始折腾atom&quot; class=&quot;headerlink&quot; title=&quot;开始折腾atom&quot;&gt;&lt;/a&gt;开始折腾atom&lt;/h3&gt;&lt;p&gt;作为git粉,迟早还是要转到atom的,不如趁早(其实现在也不算早了)&lt;/p&gt;
@@ -263,7 +305,7 @@
 &lt;h2 id=&quot;常用快捷键-（太熟悉的就不列了）&quot;&gt;&lt;a href=&quot;#常用快捷键-（太熟悉的就不列了）&quot; class=&quot;headerlink&quot; title=&quot;常用快捷键 （太熟悉的就不列了）&quot;&gt;&lt;/a&gt;常用快捷键 （太熟悉的就不列了）&lt;/h2&gt;&lt;h3 id=&quot;文件操作&quot;&gt;&lt;a href=&quot;#文件操作&quot; class=&quot;headerlink&quot; title=&quot;文件操作&quot;&gt;&lt;/a&gt;文件操作&lt;/h3&gt;&lt;p&gt;cmd-alt-s 保存全部的打开文件&lt;br&gt;cmd-shift-s 另存为&lt;br&gt;cmd-shift-O 打开目录文件&lt;br&gt;cmd-\ 显示/隐藏左侧栏&lt;/p&gt;
 &lt;h3 id=&quot;文件搜索&quot;&gt;&lt;a href=&quot;#文件搜索&quot; class=&quot;headerlink&quot; title=&quot;文件搜索&quot;&gt;&lt;/a&gt;文件搜索&lt;/h3&gt;&lt;p&gt;cmd-T 在以打开的文件里搜索文件&lt;br&gt;cmd-B 在打开的文件里搜索&lt;br&gt;cmd-shift-B 在最近git 修改的文件里搜索&lt;/p&gt;
 &lt;h3 id=&quot;tree-view&quot;&gt;&lt;a href=&quot;#tree-view&quot; class=&quot;headerlink&quot; title=&quot;tree view&quot;&gt;&lt;/a&gt;tree view&lt;/h3&gt;&lt;p&gt;cmd-shift-\ 文件定位到treeview&lt;br&gt;cmd-\ 打开关闭tree view&lt;br&gt;ctrl-shift-C copy full path&lt;/p&gt;
-&lt;h3 id=&quot;文本搜索&quot;&gt;&lt;a href=&quot;#文本搜索&quot; class=&quot;headerlink&quot; title=&quot;文本搜索&quot;&gt;&lt;/a&gt;文本搜索&lt;/h3&gt;&lt;p&gt;cmd-F 在当前文件里搜索&lt;br&gt;cmd-G 查找下一个&lt;br&gt;cmd-shift-f 在整个项目里搜索&lt;/p&gt;
+&lt;h3 id=&quot;文本搜索&quot;&gt;&lt;a href=&quot;#文本搜索&quot; class=&quot;headerlink&quot; title=&quot;文本搜索&quot;&gt;&lt;/a&gt;文本搜索&lt;/h3&gt;&lt;p&gt;cmd-F 在当前文件里搜索&lt;br&gt;cmd-G 查找下一个&lt;br&gt;cmd-shift-G 查找上一个&lt;br&gt;cmd-shift-f 在整个项目里搜索&lt;/p&gt;
 &lt;h3 id=&quot;自动补全&quot;&gt;&lt;a href=&quot;#自动补全&quot; class=&quot;headerlink&quot; title=&quot;自动补全&quot;&gt;&lt;/a&gt;自动补全&lt;/h3&gt;&lt;p&gt;ctrl-space 自动补全&lt;/p&gt;
 &lt;h3 id=&quot;分割panel&quot;&gt;&lt;a href=&quot;#分割panel&quot; class=&quot;headerlink&quot; title=&quot;分割panel&quot;&gt;&lt;/a&gt;分割panel&lt;/h3&gt;&lt;p&gt;cmd-k arrow 向箭头方向分割窗口&lt;/p&gt;
 &lt;h3 id=&quot;语法高亮选择&quot;&gt;&lt;a href=&quot;#语法高亮选择&quot; class=&quot;headerlink&quot; title=&quot;语法高亮选择&quot;&gt;&lt;/a&gt;语法高亮选择&lt;/h3&gt;&lt;p&gt;ctrl-shift-L 然后输入需要解释成什么样的语言&lt;/p&gt;
